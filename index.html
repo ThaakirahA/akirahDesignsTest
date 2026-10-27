@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thaakirah Agherdien — Multimedia Specialist &amp; Frontend Engineer</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a1830'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-style='italic' font-size='34' fill='%233a7cff' text-anchor='middle'%3ETA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================================================
+     NAV — Top Navigation Bar (Glassmorphic Floating Header)
+============================================================ -->
+<header class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-name">
+      <img src="images/logo.svg" alt="Logo" class="nav-logo" width="34" height="34">
+      <span>Thaakirah <span>Agherdien</span></span>
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+
+<!-- ============================================================
+     HERO — Intro Banner with Name, Tagline, CTAs, Photo
+============================================================ -->
+<section class="hero" id="home">
+  <div class="hero-grain"></div>
+  <canvas class="hero-stars" id="heroStars" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <div>
+      <div class="status-badge"><span class="status-dot"></span> Available for Frontend &amp; Multimedia Roles</div>
+      <p class="hero-eyebrow">Frontend Engineer</p>
+      <h1>Thaakirah<br>Agherdien</h1>
+      <p class="role">Two-time Dean's special award winner and MICTSETA certificate of appreciation recipient. Two years at CPUT managing records for 330+ interns, supervising five WIL project managers and coordinating web projects for the Huawei ICT Academy project</p>
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-solid">See my work</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo"><img src="images/profile-photo.jpeg" alt="Thaakirah Agherdien"></div>
+      <div class="hero-photo-tag">Cape Town &middot; Postgraduate Information Technology, CPUT 2026</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     ABOUT — Bio Text + Quick Facts + 3D Portrait
+============================================================ -->
+<section class="about" id="about">
+  <div class="hero-grain"></div>
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <div class="stack"></div>
+      <img class="about-fallback" src="images/about-portrait.jpg" alt="Illustrated portrait of Thaakirah wearing headphones">
+    </div>
+    <div class="about-body">
+      <div class="about-head">
+        <div class="kicker">Get to know me</div>
+        <h2 class="section-title">About me</h2>
+      </div>
+      <p class="about-lead">I'm an ICT multimedia graduate with a passion for developing user-centred, visually engaging digital solutions.</p>
+      <p>With a versatile skill set spanning from design, development, project coordination and administration. I'm a two-time Dean's Award recipient, currently completing my postgraduate diploma in Information Technology majoring in software engineering at CPUT.</p>
+      <p>Alongside the code, I've spent two years at CPUT running projects: managing records for 330+ interns, supervising five WIL project managers, and mentoring third-year students in web development, UI/UX and branding.</p>
+      <p>I adapt quickly, enjoy collaborating in teams, and am always eager to learn new technologies. I care about scalable, maintainable code and about creating meaningful, accessible digital experiences that give users and businesses something useful.</p>
+      <div class="about-tags" aria-label="Core tools">
+        <span>React</span><span>Angular</span><span>React Native</span><span>TypeScript</span><span>JavaScript</span><span>Bootstrap</span><span>PHP</span><span>Java</span><span>MySQL</span><span>WordPress</span><span>Figma</span><span>Adobe Creative Suite</span><span>Canva</span>
+      </div>
+      <div class="about-facts">
+        <div class="fact"><b>6 yrs</b><span>IT study and practical work</span></div>
+        <div class="fact"><b>330+</b><span>Interns managed at CPUT</span></div>
+        <div class="fact"><b>2</b><span>Dean's special awards</span></div>
+      </div>
+      <div class="about-cta">
+        <a href="#work" class="btn btn-solid">See my work</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SKILLS — Planetary Solar System & Zoom Scrollytelling
+============================================================ -->
+<section id="skills" class="skills-cosmos-section">
+  <div class="skills-sticky" id="skillsSticky">
+    <!-- Starfield & Nebula Background -->
+    <canvas class="skills-stars" id="skillsStarsCanvas" aria-hidden="true"></canvas>
+    <div class="skills-nebula-glow" aria-hidden="true"></div>
+
+    <!-- Header Layer (Matches Reference Layout) -->
+    <div class="skills-cosmic-header" id="skillsCosmicHeader">
+      <div class="skills-intro">
+        <div class="skills-tag">
+          <span>SKILLS</span>
+          <span class="skills-tag-line"></span>
+        </div>
+        <h2 class="skills-main-title">My <span class="grad-skills">Skills</span></h2>
+        <p class="skills-desc">A blend of technical, creative and people skills that help me design, build and share meaningful digital experiences.</p>
+        <button type="button" class="orbit-explore-btn" id="orbitExploreBtn">
+          <span>Explore my skills</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+      <div class="skills-orbit-note">
+        <span>DIFFERENT SKILLS &bull; SAME ORBIT</span>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.6H22l-6.2 4.5 2.4 7.5-6.2-4.5-6.2 4.5 2.4-7.5L2 9.6h7.6z"/></svg>
+      </div>
+    </div>
+
+    <!-- Orbit Universe Stage (Rotates & Zooms) -->
+    <div class="orbit-universe" id="orbitUniverse">
+      <div class="orbit-stage" id="orbitStage">
+
+        <!-- Orbit Ellipses & Celestial Trajectory (Matches Reference Image) -->
+        <svg class="orbit-tracks" viewBox="0 0 1100 700" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <filter id="starGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="3.5" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- Concentric Orbital Paths -->
+          <ellipse cx="550" cy="350" rx="475" ry="255" stroke="rgba(148, 163, 184, 0.18)" stroke-width="1.2" stroke-dasharray="4 6" />
+          <ellipse cx="550" cy="350" rx="410" ry="215" stroke="rgba(56, 189, 248, 0.22)" stroke-width="1.2" />
+          <ellipse cx="550" cy="350" rx="310" ry="165" stroke="rgba(148, 163, 184, 0.15)" stroke-width="1" stroke-dasharray="5 7" />
+
+          <!-- Upper Trajectory Arc towards "DIFFERENT SKILLS SAME ORBIT" -->
+          <path d="M 910 170 C 970 120 1010 95 1045 80" stroke="rgba(125, 211, 252, 0.35)" stroke-width="1.2" stroke-dasharray="3 4" fill="none"/>
+          <path d="M 1045 74 L 1046.5 78.5 L 1051 80 L 1046.5 81.5 L 1045 86 L 1043.5 81.5 L 1039 80 L 1043.5 78.5 Z" fill="#7dd3fc" filter="url(#starGlow)"/>
+
+          <!-- Celestial Moonlets & Starlit Asteroids (True Astronomical Diamond White & Starlight) -->
+          <circle cx="210" cy="390" r="3" fill="#ffffff" opacity="0.9" filter="url(#starGlow)"/>
+          <circle cx="430" cy="210" r="3.8" fill="#e0f2fe" opacity="0.95" filter="url(#starGlow)"/>
+          <circle cx="690" cy="165" r="2.8" fill="#bae6fd" opacity="0.85"/>
+          <circle cx="890" cy="290" r="3.4" fill="#ffffff" opacity="0.9" filter="url(#starGlow)"/>
+          <circle cx="800" cy="485" r="3" fill="#bae6fd" opacity="0.8"/>
+          <circle cx="620" cy="580" r="3.6" fill="#f1f5f9" opacity="0.85" filter="url(#starGlow)"/>
+          <circle cx="360" cy="565" r="3" fill="#e0f2fe" opacity="0.8"/>
+          <circle cx="195" cy="310" r="3.5" fill="#ffffff" opacity="0.9" filter="url(#starGlow)"/>
+          <circle cx="480" cy="140" r="2.4" fill="#ffffff" opacity="0.75"/>
+          <!-- 4-point telescope diffraction cross on prominent landmark star -->
+          <g transform="translate(430, 210)" stroke="rgba(255,255,255,0.7)" stroke-width="0.8">
+            <line x1="-10" y1="0" x2="10" y2="0"/>
+            <line x1="0" y1="-10" x2="0" y2="10"/>
+          </g>
+          <g transform="translate(890, 290)" stroke="rgba(186,230,253,0.65)" stroke-width="0.8">
+            <line x1="-8" y1="0" x2="8" y2="0"/>
+            <line x1="0" y1="-8" x2="0" y2="8"/>
+          </g>
+        </svg>
+
+        <!-- Center Mega Planet: "Skills" Core with 3D Luminous Saturn Rings -->
+        <div class="planet-anchor planet-center" data-planet="0" role="button" aria-label="Center Skills Sun">
+          <svg class="planet-center-svg" viewBox="0 0 340 260" width="340" height="260" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <!-- Deep Interstellar Obsidian Core with Sapphire Limb -->
+              <radialGradient id="cgSphere" cx="36%" cy="30%" r="70%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+                <stop offset="14%" stop-color="#93c5fd"/>
+                <stop offset="38%" stop-color="#2563eb"/>
+                <stop offset="65%" stop-color="#0f172a"/>
+                <stop offset="88%" stop-color="#030712"/>
+                <stop offset="100%" stop-color="#010309"/>
+              </radialGradient>
+              <!-- Interstellar Accretion Ring: Diamond Starlight, Cold Ice, Sapphire Shadows -->
+              <linearGradient id="cgRing" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.85"/>
+                <stop offset="22%" stop-color="#e0f2fe" stop-opacity="0.95"/>
+                <stop offset="50%" stop-color="#ffffff" stop-opacity="1"/>
+                <stop offset="78%" stop-color="#93c5fd" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.85"/>
+              </linearGradient>
+              <filter id="cgGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="7" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+              <!-- Deep Space Atmospheric Halo -->
+              <radialGradient id="cgAtmo" cx="50%" cy="50%" r="50%">
+                <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.4"/>
+                <stop offset="85%" stop-color="#1e40af" stop-opacity="0.2"/>
+                <stop offset="100%" stop-color="#0b132b" stop-opacity="0"/>
+              </radialGradient>
+              <clipPath id="cgSphereClip">
+                <circle cx="170" cy="130" r="86"/>
+              </clipPath>
+            </defs>
+
+            <!-- Atmospheric Outer Haze -->
+            <circle cx="170" cy="130" r="98" fill="url(#cgAtmo)"/>
+
+            <!-- Back part of 3D Ring (behind sphere) -->
+            <g opacity="0.8" filter="url(#cgGlow)">
+              <path d="M 28,130 A 142 36 0 0 1 312,130" fill="none" stroke="url(#cgRing)" stroke-width="13" stroke-linecap="round"/>
+              <path d="M 44,130 A 126 30 0 0 1 296,130" fill="none" stroke="rgba(255,255,255,0.75)" stroke-width="1.8" stroke-dasharray="10 6"/>
+            </g>
+
+            <!-- Main Planet Sphere -->
+            <circle cx="170" cy="130" r="86" fill="url(#cgSphere)"/>
+
+            <!-- Surface Planetary Cloud Strata (Deep Space Neptune/Jupiter Banding) -->
+            <g clip-path="url(#cgSphereClip)">
+              <path d="M 80,105 Q 170,118 260,105 Q 170,112 80,105 Z" fill="#7dd3fc" opacity="0.22"/>
+              <path d="M 80,122 Q 170,136 260,122 Q 170,129 80,122 Z" fill="#60a5fa" opacity="0.25"/>
+              <path d="M 80,140 Q 170,152 260,140 Q 170,146 80,140 Z" fill="#38bdf8" opacity="0.2"/>
+              <path d="M 80,158 Q 170,168 260,158 Q 170,163 80,158 Z" fill="#818cf8" opacity="0.18"/>
+              <!-- Specular Glint -->
+              <ellipse cx="140" cy="95" rx="42" ry="20" fill="#ffffff" opacity="0.32" transform="rotate(-15 140 95)"/>
+              <!-- Limb Brightening Rim -->
+              <circle cx="170" cy="130" r="85" fill="none" stroke="#bae6fd" stroke-width="2.5" opacity="0.5"/>
+            </g>
+
+            <!-- Front part of 3D Ring (in front of sphere) -->
+            <g filter="url(#cgGlow)">
+              <path d="M 312,130 A 142 36 0 0 1 28,130" fill="none" stroke="url(#cgRing)" stroke-width="13" stroke-linecap="round"/>
+              <path d="M 296,130 A 126 30 0 0 1 44,130" fill="none" stroke="#ffffff" stroke-width="2.2"/>
+              <path d="M 280,130 A 110 24 0 0 1 60,130" fill="none" stroke="rgba(186,230,253,0.75)" stroke-width="2.5" stroke-dasharray="5 7"/>
+            </g>
+
+            <!-- Core Typography (Crisp Diamond Starlight) -->
+            <g text-anchor="middle" id="coreTextGroup">
+              <text x="170" y="122" font-family="'Instrument Serif', Georgia, serif" font-style="italic" font-size="44" fill="#ffffff" filter="drop-shadow(0 0 10px rgba(255,255,255,0.95))">Skills</text>
+              <text x="170" y="142" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.5" font-weight="700" letter-spacing="0.24em" fill="#f8fafc">IDEAS &bull; DESIGN &bull; BUILD</text>
+              <text x="170" y="156" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8" font-weight="700" letter-spacing="0.24em" fill="#94a3b8">PEOPLE &bull; IMPACT</text>
+            </g>
+
+            <!-- Orbiting Companion Starlight Moonlet -->
+            <circle cx="288" cy="98" r="4.5" fill="#ffffff" filter="drop-shadow(0 0 8px #7dd3fc)"/>
+          </svg>
+        </div>
+
+        <!-- Planet 01: Technical (Electric Cobalt Blue) -->
+        <div class="planet-anchor planet-1" data-planet="1" role="button" tabindex="0" aria-label="Zoom to Technical skills" style="--p-color: #60a5fa; --p-glow: rgba(59, 130, 246, 0.6); --p-dim: rgba(37, 99, 235, 0.2);">
+          <div class="planet-badge">01</div>
+          <div class="planet-orb">
+            <svg class="planet-svg" viewBox="0 0 100 100" width="92" height="92" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="p1Grad" cx="35%" cy="32%" r="68%">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="15%" stop-color="#dbeafe"/>
+                  <stop offset="42%" stop-color="#3b82f6"/>
+                  <stop offset="72%" stop-color="#1d4ed8"/>
+                  <stop offset="90%" stop-color="#172554"/>
+                  <stop offset="100%" stop-color="#030712"/>
+                </radialGradient>
+                <linearGradient id="p1Ring" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#93c5fd"/>
+                  <stop offset="50%" stop-color="#ffffff"/>
+                  <stop offset="100%" stop-color="#3b82f6"/>
+                </linearGradient>
+                <radialGradient id="p1Atmo" cx="50%" cy="50%" r="50%">
+                  <stop offset="65%" stop-color="#60a5fa" stop-opacity="0.45"/>
+                  <stop offset="85%" stop-color="#2563eb" stop-opacity="0.22"/>
+                  <stop offset="100%" stop-color="#1e3a8a" stop-opacity="0"/>
+                </radialGradient>
+                <filter id="p1Glow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="3.5" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+
+              <circle cx="50" cy="50" r="48" fill="url(#p1Atmo)"/>
+              <!-- Back Half of Mini Tilted Ring -->
+              <g transform="rotate(-26 50 50)" opacity="0.7">
+                <path d="M 6,50 A 44 14 0 0 1 94,50" fill="none" stroke="url(#p1Ring)" stroke-width="2.2" stroke-linecap="round"/>
+              </g>
+              <circle cx="50" cy="50" r="39" fill="url(#p1Grad)"/>
+              <path d="M 18,36 A 39 39 0 0 1 65,13 A 36 36 0 0 0 25,48 Z" fill="#ffffff" opacity="0.32"/>
+              <circle cx="50" cy="50" r="38.5" fill="none" stroke="#bfdbfe" stroke-width="1.8" opacity="0.55"/>
+              <!-- Front Half of Mini Tilted Ring -->
+              <g transform="rotate(-26 50 50)" filter="url(#p1Glow)">
+                <path d="M 94,50 A 44 14 0 0 1 6,50" fill="none" stroke="url(#p1Ring)" stroke-width="2.5" stroke-linecap="round"/>
+              </g>
+              <!-- Crisp Vector </> -->
+              <g filter="url(#p1Glow)">
+                <path d="M 37 42 L 29 50 L 37 58" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M 53 37 L 47 63" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                <path d="M 63 42 L 71 50 L 63 58" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>
+            <div class="planet-moon moon-1"></div>
+          </div>
+          <div class="planet-pill">Technical</div>
+        </div>
+
+        <!-- Planet 02: Design & multimedia (Royal Amethyst Violet) -->
+        <div class="planet-anchor planet-2" data-planet="2" role="button" tabindex="0" aria-label="Zoom to Design and multimedia skills" style="--p-color: #c084fc; --p-glow: rgba(168, 85, 247, 0.6); --p-dim: rgba(126, 34, 206, 0.2);">
+          <div class="planet-badge">02</div>
+          <div class="planet-orb">
+            <svg class="planet-svg" viewBox="0 0 100 100" width="92" height="92" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="p2Grad" cx="35%" cy="32%" r="68%">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="15%" stop-color="#f3e8ff"/>
+                  <stop offset="42%" stop-color="#a855f7"/>
+                  <stop offset="72%" stop-color="#7e22ce"/>
+                  <stop offset="90%" stop-color="#3b0764"/>
+                  <stop offset="100%" stop-color="#0a0212"/>
+                </radialGradient>
+                <radialGradient id="p2Atmo" cx="50%" cy="50%" r="50%">
+                  <stop offset="65%" stop-color="#c084fc" stop-opacity="0.45"/>
+                  <stop offset="85%" stop-color="#9333ea" stop-opacity="0.22"/>
+                  <stop offset="100%" stop-color="#581c87" stop-opacity="0"/>
+                </radialGradient>
+                <filter id="p2Glow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="3.5" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <clipPath id="p2SphereClip">
+                  <circle cx="50" cy="50" r="39"/>
+                </clipPath>
+              </defs>
+
+              <circle cx="50" cy="50" r="48" fill="url(#p2Atmo)"/>
+              <circle cx="50" cy="50" r="39" fill="url(#p2Grad)"/>
+
+              <g clip-path="url(#p2SphereClip)">
+                <path d="M 12 40 Q 50 48 88 40 Q 50 44 12 40 Z" fill="#e9d5ff" opacity="0.22"/>
+                <path d="M 12 55 Q 50 62 88 55 Q 50 59 12 55 Z" fill="#c084fc" opacity="0.18"/>
+                <path d="M 18,36 A 39 39 0 0 1 65,13 A 36 36 0 0 0 25,48 Z" fill="#ffffff" opacity="0.32"/>
+                <circle cx="50" cy="50" r="38.5" fill="none" stroke="#e9d5ff" stroke-width="1.8" opacity="0.55"/>
+              </g>
+
+              <!-- Razor-Sharp Artist Palette -->
+              <g filter="url(#p2Glow)">
+                <path d="M 50 30 C 38 30 29 39 29 49 C 29 56.5 34.5 62.5 42 62.5 C 44.5 62.5 46.5 60.5 46.5 58 C 46.5 56.8 46 55.7 45.2 54.9 C 44.5 54 44 52.9 44 51.5 C 44 48.7 46.2 46.5 49 46.5 L 53 46.5 C 61 46.5 67.5 40 67.5 32 C 67.5 30.5 66.8 30 66 30 Z" fill="#ffffff"/>
+                <circle cx="38" cy="41" r="2.5" fill="#38bdf8"/>
+                <circle cx="48" cy="36" r="2.5" fill="#818cf8"/>
+                <circle cx="58" cy="41" r="2.5" fill="#c084fc"/>
+                <circle cx="42" cy="54" r="3" fill="#1e0a30"/>
+              </g>
+            </svg>
+            <div class="planet-moon moon-2"></div>
+          </div>
+          <div class="planet-pill">Design &amp; multimedia</div>
+        </div>
+
+        <!-- Planet 03: Web & tools (Sub-Zero Oceanic Cyan) -->
+        <div class="planet-anchor planet-3" data-planet="3" role="button" tabindex="0" aria-label="Zoom to Web and tools skills" style="--p-color: #38bdf8; --p-glow: rgba(56, 189, 248, 0.6); --p-dim: rgba(14, 116, 144, 0.2);">
+          <div class="planet-badge">03</div>
+          <div class="planet-orb">
+            <svg class="planet-svg" viewBox="0 0 100 100" width="92" height="92" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="p3Grad" cx="35%" cy="32%" r="68%">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="15%" stop-color="#e0f2fe"/>
+                  <stop offset="42%" stop-color="#0ea5e9"/>
+                  <stop offset="72%" stop-color="#0369a1"/>
+                  <stop offset="90%" stop-color="#082f49"/>
+                  <stop offset="100%" stop-color="#020e17"/>
+                </radialGradient>
+                <radialGradient id="p3Atmo" cx="50%" cy="50%" r="50%">
+                  <stop offset="65%" stop-color="#38bdf8" stop-opacity="0.45"/>
+                  <stop offset="85%" stop-color="#0284c7" stop-opacity="0.22"/>
+                  <stop offset="100%" stop-color="#0369a1" stop-opacity="0"/>
+                </radialGradient>
+                <filter id="p3Glow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="3.5" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <clipPath id="p3SphereClip">
+                  <circle cx="50" cy="50" r="39"/>
+                </clipPath>
+              </defs>
+
+              <circle cx="50" cy="50" r="48" fill="url(#p3Atmo)"/>
+              <circle cx="50" cy="50" r="39" fill="url(#p3Grad)"/>
+
+              <g clip-path="url(#p3SphereClip)">
+                <path d="M 12 38 Q 50 46 88 38 Q 50 42 12 38 Z" fill="#bae6fd" opacity="0.22"/>
+                <path d="M 12 54 Q 50 62 88 54 Q 50 58 12 54 Z" fill="#38bdf8" opacity="0.2"/>
+                <path d="M 18,36 A 39 39 0 0 1 65,13 A 36 36 0 0 0 25,48 Z" fill="#ffffff" opacity="0.32"/>
+                <circle cx="50" cy="50" r="38.5" fill="none" stroke="#bae6fd" stroke-width="1.8" opacity="0.55"/>
+              </g>
+
+              <!-- Razor-Sharp Wireframe Globe -->
+              <g filter="url(#p3Glow)">
+                <circle cx="50" cy="50" r="18" fill="none" stroke="#ffffff" stroke-width="2.6"/>
+                <line x1="32" y1="50" x2="68" y2="50" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/>
+                <ellipse cx="50" cy="50" rx="9" ry="18" fill="none" stroke="#ffffff" stroke-width="2.4"/>
+                <line x1="50" y1="32" x2="50" y2="68" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/>
+              </g>
+            </svg>
+            <div class="planet-moon moon-3"></div>
+          </div>
+          <div class="planet-pill">Web &amp; tools</div>
+        </div>
+
+        <!-- Planet 04: Content & marketing (Twilight Indigo / Electric Periwinkle) -->
+        <div class="planet-anchor planet-4" data-planet="4" role="button" tabindex="0" aria-label="Zoom to Content and marketing skills" style="--p-color: #818cf8; --p-glow: rgba(99, 102, 241, 0.6); --p-dim: rgba(67, 56, 202, 0.2);">
+          <div class="planet-badge">04</div>
+          <div class="planet-orb">
+            <svg class="planet-svg" viewBox="0 0 100 100" width="92" height="92" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="p4Grad" cx="35%" cy="32%" r="68%">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="15%" stop-color="#e0e7ff"/>
+                  <stop offset="42%" stop-color="#6366f1"/>
+                  <stop offset="72%" stop-color="#4338ca"/>
+                  <stop offset="90%" stop-color="#1e1b4b"/>
+                  <stop offset="100%" stop-color="#080718"/>
+                </radialGradient>
+                <radialGradient id="p4Atmo" cx="50%" cy="50%" r="50%">
+                  <stop offset="65%" stop-color="#818cf8" stop-opacity="0.45"/>
+                  <stop offset="85%" stop-color="#4f46e5" stop-opacity="0.22"/>
+                  <stop offset="100%" stop-color="#312e81" stop-opacity="0"/>
+                </radialGradient>
+                <filter id="p4Glow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="3.5" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <clipPath id="p4SphereClip">
+                  <circle cx="50" cy="50" r="39"/>
+                </clipPath>
+              </defs>
+
+              <circle cx="50" cy="50" r="48" fill="url(#p4Atmo)"/>
+              <circle cx="50" cy="50" r="39" fill="url(#p4Grad)"/>
+
+              <g clip-path="url(#p4SphereClip)">
+                <path d="M 12 42 Q 50 50 88 42 Q 50 46 12 42 Z" fill="#c7d2fe" opacity="0.22"/>
+                <path d="M 12 56 Q 50 63 88 56 Q 50 60 12 56 Z" fill="#818cf8" opacity="0.18"/>
+                <path d="M 18,36 A 39 39 0 0 1 65,13 A 36 36 0 0 0 25,48 Z" fill="#ffffff" opacity="0.32"/>
+                <circle cx="50" cy="50" r="38.5" fill="none" stroke="#c7d2fe" stroke-width="1.8" opacity="0.55"/>
+              </g>
+
+              <!-- Razor-Sharp Megaphone with Waves -->
+              <g filter="url(#p4Glow)">
+                <path d="M 35 44 L 43 44 L 56 34 L 56 66 L 43 56 L 35 56 Z" fill="#ffffff"/>
+                <path d="M 40 56 L 40 64" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                <path d="M 61 43 C 64 47 64 53 61 57" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+                <path d="M 66 38 C 71 45 71 55 66 62" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+              </g>
+            </svg>
+            <div class="planet-moon moon-4"></div>
+          </div>
+          <div class="planet-pill">Content &amp; marketing</div>
+        </div>
+
+        <!-- Planet 05: Professional (Deep Celestial Purple / Orchid Plum) -->
+        <div class="planet-anchor planet-5" data-planet="5" role="button" tabindex="0" aria-label="Zoom to Professional skills" style="--p-color: #d8b4fe; --p-glow: rgba(168, 85, 247, 0.55); --p-dim: rgba(107, 33, 168, 0.2);">
+          <div class="planet-badge">05</div>
+          <div class="planet-orb">
+            <svg class="planet-svg" viewBox="0 0 100 100" width="92" height="92" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="p5Grad" cx="35%" cy="32%" r="68%">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="16%" stop-color="#f5d0fe"/>
+                  <stop offset="42%" stop-color="#9333ea"/>
+                  <stop offset="72%" stop-color="#6b21a8"/>
+                  <stop offset="90%" stop-color="#2e0854"/>
+                  <stop offset="100%" stop-color="#0b0114"/>
+                </radialGradient>
+                <radialGradient id="p5Atmo" cx="50%" cy="50%" r="50%">
+                  <stop offset="65%" stop-color="#d8b4fe" stop-opacity="0.45"/>
+                  <stop offset="85%" stop-color="#a855f7" stop-opacity="0.22"/>
+                  <stop offset="100%" stop-color="#581c87" stop-opacity="0"/>
+                </radialGradient>
+                <filter id="p5Glow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="3.5" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <clipPath id="p5SphereClip">
+                  <circle cx="50" cy="50" r="39"/>
+                </clipPath>
+              </defs>
+
+              <circle cx="50" cy="50" r="48" fill="url(#p5Atmo)"/>
+              <circle cx="50" cy="50" r="39" fill="url(#p5Grad)"/>
+
+              <g clip-path="url(#p5SphereClip)">
+                <path d="M 12 40 Q 50 48 88 40 Q 50 44 12 40 Z" fill="#f0abfc" opacity="0.22"/>
+                <path d="M 12 55 Q 50 63 88 55 Q 50 59 12 55 Z" fill="#d8b4fe" opacity="0.18"/>
+                <path d="M 18,36 A 39 39 0 0 1 65,13 A 36 36 0 0 0 25,48 Z" fill="#ffffff" opacity="0.32"/>
+                <circle cx="50" cy="50" r="38.5" fill="none" stroke="#f5d0fe" stroke-width="1.8" opacity="0.55"/>
+              </g>
+
+              <!-- Razor-Sharp 3-Person Team Silhouette -->
+              <g filter="url(#p5Glow)">
+                <circle cx="50" cy="42" r="4.6" fill="#ffffff"/>
+                <path d="M 41 58 C 41 53 45 49 50 49 C 55 49 59 53 59 58 Z" fill="#ffffff"/>
+                <circle cx="37" cy="45" r="3.6" fill="#ffffff" opacity="0.9"/>
+                <path d="M 30 60 C 30 56 33.5 53 37.5 53 C 39.5 53 41.2 53.8 42.4 55.2 C 41.5 56.6 41 58.2 41 60 Z" fill="#ffffff" opacity="0.9"/>
+                <circle cx="63" cy="45" r="3.6" fill="#ffffff" opacity="0.9"/>
+                <path d="M 70 60 C 70 56 66.5 53 62.5 53 C 60.5 53 58.8 53.8 57.6 55.2 C 58.5 56.6 59 58.2 59 60 Z" fill="#ffffff" opacity="0.9"/>
+              </g>
+            </svg>
+            <div class="planet-moon moon-5"></div>
+          </div>
+          <div class="planet-pill">Professional</div>
+        </div>
+
+        <!-- Planet 06: Productivity tools (Ultramarine Sapphire Steel Blue) -->
+        <div class="planet-anchor planet-6" data-planet="6" role="button" tabindex="0" aria-label="Zoom to Productivity tools" style="--p-color: #93c5fd; --p-glow: rgba(59, 130, 246, 0.55); --p-dim: rgba(30, 64, 175, 0.2);">
+          <div class="planet-badge">06</div>
+          <div class="planet-orb">
+            <svg class="planet-svg" viewBox="0 0 100 100" width="92" height="92" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="p6Grad" cx="35%" cy="32%" r="68%">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="15%" stop-color="#eff6ff"/>
+                  <stop offset="42%" stop-color="#2563eb"/>
+                  <stop offset="72%" stop-color="#1e40af"/>
+                  <stop offset="90%" stop-color="#172554"/>
+                  <stop offset="100%" stop-color="#020817"/>
+                </radialGradient>
+                <radialGradient id="p6Atmo" cx="50%" cy="50%" r="50%">
+                  <stop offset="65%" stop-color="#93c5fd" stop-opacity="0.45"/>
+                  <stop offset="85%" stop-color="#3b82f6" stop-opacity="0.22"/>
+                  <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0"/>
+                </radialGradient>
+                <filter id="p6Glow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="3.5" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <clipPath id="p6SphereClip">
+                  <circle cx="50" cy="50" r="39"/>
+                </clipPath>
+              </defs>
+
+              <circle cx="50" cy="50" r="48" fill="url(#p6Atmo)"/>
+              <circle cx="50" cy="50" r="39" fill="url(#p6Grad)"/>
+
+              <g clip-path="url(#p6SphereClip)">
+                <path d="M 12 36 Q 50 44 88 36 Q 50 40 12 36 Z" fill="#bfdbfe" opacity="0.24"/>
+                <path d="M 12 48 Q 50 56 88 48 Q 50 52 12 48 Z" fill="#60a5fa" opacity="0.18"/>
+                <path d="M 12 60 Q 50 67 88 60 Q 50 64 12 60 Z" fill="#1e40af" opacity="0.2"/>
+                <path d="M 18,36 A 39 39 0 0 1 65,13 A 36 36 0 0 0 25,48 Z" fill="#ffffff" opacity="0.32"/>
+                <circle cx="50" cy="50" r="38.5" fill="none" stroke="#bfdbfe" stroke-width="1.8" opacity="0.55"/>
+              </g>
+
+              <!-- Razor-Sharp Laptop -->
+              <g filter="url(#p6Glow)">
+                <rect x="35" y="36" width="30" height="20" rx="2.5" fill="none" stroke="#ffffff" stroke-width="2.6"/>
+                <rect x="38" y="39" width="24" height="14" rx="1.5" fill="#ffffff" opacity="0.3"/>
+                <path d="M 30 58 L 70 58 C 71 58 71.8 58.8 71.2 59.8 L 69 63 C 68.4 63.6 67.5 64 66.5 64 L 33.5 64 C 32.5 64 31.6 63.6 31 63 L 28.8 59.8 C 28.2 58.8 29 58 30 58 Z" fill="#ffffff"/>
+              </g>
+            </svg>
+            <div class="planet-moon moon-6"></div>
+          </div>
+          <div class="planet-pill">Productivity tools</div>
+        </div>
+
+      </div><!-- /.orbit-stage -->
+    </div><!-- /.orbit-universe -->
+
+    <!-- Holographic Planet Detail Cards -->
+    <div class="planet-detail-deck" id="planetDetailDeck">
+
+      <!-- Card 1: Technical -->
+      <article class="planet-detail-card" data-card="1" style="--card-accent: #60a5fa; --card-glow: rgba(59, 130, 246, 0.4);">
+        <div class="card-top-tag">PLANET 01 &middot; SYSTEM CORE</div>
+        <div class="card-title-group">
+          <h3 class="card-planet-title">Technical</h3>
+          <p class="card-planet-sub">What I build with</p>
+        </div>
+        <div class="card-skills-body">
+          <div class="card-skill-group">
+            <span class="card-group-label">Languages</span>
+            <div class="card-skill-items">
+              <span class="sk-item">JavaScript</span><span class="sk-item">HTML / CSS</span><span class="sk-item">TypeScript</span><span class="sk-item">MySQL</span><span class="sk-item">PHP</span><span class="sk-item">Java</span>
+            </div>
+          </div>
+          <div class="card-skill-group">
+            <span class="card-group-label">Frameworks &amp; tooling</span>
+            <div class="card-skill-items">
+              <span class="sk-item">React</span><span class="sk-item">React Native</span><span class="sk-item">Bootstrap</span><span class="sk-item">Angular</span><span class="sk-item">Tailwind</span><span class="sk-item">Sass</span><span class="sk-item">Webpack</span><span class="sk-item">Jest</span>
+            </div>
+          </div>
+          <div class="card-skill-group">
+            <span class="card-group-label">Focus areas</span>
+            <div class="card-skill-items">
+              <span class="sk-item">Human&ndash;Computer Interaction</span><span class="sk-item">Artificial Intelligence</span><span class="sk-item">Accessibility</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer-controls">
+          <button type="button" class="card-nav-btn prev-btn" data-go="0">&larr; Back to Orbit</button>
+          <button type="button" class="card-nav-btn next-btn" data-go="2">Planet 02 &rarr;</button>
+        </div>
+      </article>
+
+      <!-- Card 2: Design & multimedia -->
+      <article class="planet-detail-card" data-card="2" style="--card-accent: #c084fc; --card-glow: rgba(168, 85, 247, 0.4);">
+        <div class="card-top-tag">PLANET 02 &middot; CREATIVE SPHERE</div>
+        <div class="card-title-group">
+          <h3 class="card-planet-title">Design &amp; multimedia</h3>
+          <p class="card-planet-sub">How it looks and feels</p>
+        </div>
+        <div class="card-skills-body">
+          <div class="card-skill-group">
+            <div class="card-skill-items">
+              <span class="sk-item">Photoshop</span><span class="sk-item">Illustrator</span><span class="sk-item">Canva</span><span class="sk-item">Figma</span><span class="sk-item">UI/UX &amp; prototyping</span><span class="sk-item">Brand development</span><span class="sk-item">Graphic design</span><span class="sk-item">Image editing</span><span class="sk-item">InDesign</span><span class="sk-item">Basic video editing</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer-controls">
+          <button type="button" class="card-nav-btn prev-btn" data-go="1">&larr; Planet 01</button>
+          <button type="button" class="card-nav-btn next-btn" data-go="3">Planet 03 &rarr;</button>
+        </div>
+      </article>
+
+      <!-- Card 3: Web & tools -->
+      <article class="planet-detail-card" data-card="3" style="--card-accent: #38bdf8; --card-glow: rgba(56, 189, 248, 0.4);">
+        <div class="card-top-tag">PLANET 03 &middot; DEPLOYMENT ORBIT</div>
+        <div class="card-title-group">
+          <h3 class="card-planet-title">Web &amp; tools</h3>
+          <p class="card-planet-sub">Shipping it online</p>
+        </div>
+        <div class="card-skills-body">
+          <div class="card-skill-group">
+            <div class="card-skill-items">
+              <span class="sk-item">Responsive design</span><span class="sk-item">Git &amp; GitHub</span><span class="sk-item">VS Code</span><span class="sk-item">Live links &amp; uploads</span><span class="sk-item">WordPress</span><span class="sk-item">CodePen</span><span class="sk-item">Vercel</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer-controls">
+          <button type="button" class="card-nav-btn prev-btn" data-go="2">&larr; Planet 02</button>
+          <button type="button" class="card-nav-btn next-btn" data-go="4">Planet 04 &rarr;</button>
+        </div>
+      </article>
+
+      <!-- Card 4: Content & marketing -->
+      <article class="planet-detail-card" data-card="4" style="--card-accent: #818cf8; --card-glow: rgba(99, 102, 241, 0.4);">
+        <div class="card-top-tag">PLANET 04 &middot; AMPLIFICATION</div>
+        <div class="card-title-group">
+          <h3 class="card-planet-title">Content &amp; marketing</h3>
+          <p class="card-planet-sub">Getting the word out</p>
+        </div>
+        <div class="card-skills-body">
+          <div class="card-skill-group">
+            <div class="card-skill-items">
+              <span class="sk-item">Social media</span><span class="sk-item">Content creation</span><span class="sk-item">Caption writing</span><span class="sk-item">Website updates</span><span class="sk-item">SEO fundamentals</span><span class="sk-item">Digital marketing</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer-controls">
+          <button type="button" class="card-nav-btn prev-btn" data-go="3">&larr; Planet 03</button>
+          <button type="button" class="card-nav-btn next-btn" data-go="5">Planet 05 &rarr;</button>
+        </div>
+      </article>
+
+      <!-- Card 5: Professional -->
+      <article class="planet-detail-card" data-card="5" style="--card-accent: #d8b4fe; --card-glow: rgba(168, 85, 247, 0.4);">
+        <div class="card-top-tag">PLANET 05 &middot; LEADERSHIP &amp; IMPACT</div>
+        <div class="card-title-group">
+          <h3 class="card-planet-title">Professional</h3>
+          <p class="card-planet-sub">How I work with people</p>
+        </div>
+        <div class="card-skills-body">
+          <div class="card-skill-group">
+            <div class="card-skill-items">
+              <span class="sk-item">Project management</span><span class="sk-item">Leadership &amp; mentorship</span><span class="sk-item">Team collaboration</span><span class="sk-item">Problem-solving</span><span class="sk-item">Deadline management</span><span class="sk-item">Attention to detail</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer-controls">
+          <button type="button" class="card-nav-btn prev-btn" data-go="4">&larr; Planet 04</button>
+          <button type="button" class="card-nav-btn next-btn" data-go="6">Planet 06 &rarr;</button>
+        </div>
+      </article>
+
+      <!-- Card 6: Productivity tools -->
+      <article class="planet-detail-card" data-card="6" style="--card-accent: #93c5fd; --card-glow: rgba(59, 130, 246, 0.4);">
+        <div class="card-top-tag">PLANET 06 &middot; OPERATIONS</div>
+        <div class="card-title-group">
+          <h3 class="card-planet-title">Productivity tools</h3>
+          <p class="card-planet-sub">Day-to-day workhorses</p>
+        </div>
+        <div class="card-skills-body">
+          <div class="card-skill-group">
+            <span class="card-group-label">Microsoft Office 365</span>
+            <div class="card-skill-items">
+              <span class="sk-item">Excel</span><span class="sk-item">Word</span><span class="sk-item">PowerPoint</span><span class="sk-item">Teams</span><span class="sk-item">Outlook</span><span class="sk-item">OneDrive</span>
+            </div>
+          </div>
+          <div class="card-skill-group">
+            <span class="card-group-label">Google Workspace</span>
+            <div class="card-skill-items">
+              <span class="sk-item">Docs</span><span class="sk-item">Sheets</span><span class="sk-item">Slides</span><span class="sk-item">Drive</span><span class="sk-item">Meet</span><span class="sk-item">Forms</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer-controls">
+          <button type="button" class="card-nav-btn prev-btn" data-go="5">&larr; Planet 05</button>
+          <button type="button" class="card-nav-btn next-btn" data-go="0">Overview &rarr;</button>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Scroll Mouse Hint -->
+    <div class="orbit-scroll-hint" id="orbitScrollHint" aria-hidden="true">
+      <div class="scroll-mouse"><span class="scroll-wheel"></span></div>
+      <span>SCROLL TO ORBIT &amp; ZOOM</span>
+    </div>
+
+    <!-- Bottom Orbit HUD Controls -->
+    <nav class="orbit-hud" id="orbitHud" aria-label="Skills orbit selector">
+      <button type="button" class="hud-pill active" data-step="0"><span class="hud-dot"></span><span>Orbit</span></button>
+      <button type="button" class="hud-pill" data-step="1"><span class="hud-num">01</span><span>Technical</span></button>
+      <button type="button" class="hud-pill" data-step="2"><span class="hud-num">02</span><span>Design</span></button>
+      <button type="button" class="hud-pill" data-step="3"><span class="hud-num">03</span><span>Web</span></button>
+      <button type="button" class="hud-pill" data-step="4"><span class="hud-num">04</span><span>Content</span></button>
+      <button type="button" class="hud-pill" data-step="5"><span class="hud-num">05</span><span>Professional</span></button>
+      <button type="button" class="hud-pill" data-step="6"><span class="hud-num">06</span><span>Productivity</span></button>
+    </nav>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     EXPERIENCE — Scrolling Marquee + Work-History Timeline
+============================================================ -->
+<section class="experience" id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Where I've worked</p>
+      <h2 class="section-title">Experience</h2>
+    </div>
+
+    <div class="marquee reverse" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><b>Multimedia Specialist</b><span class="sub">&middot; Frontend Engineer</span></div>
+        <div class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><circle cx="8" cy="9.5" r="1.6" fill="currentColor" stroke="none"/><path d="M13 8h6M13 11h6M4 17l3-3 2 2 3-4 3 3"/></svg><b>Advancement Intern Administrator</b><span class="sub">&middot; CPUT</span></div>
+        <div class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><b>Project Manager</b><span class="sub">&middot; CPUT IT Department</span></div>
+        <div class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3-6 7-6s7 2.7 7 6"/><circle cx="18" cy="8" r="2.4"/><path d="M15.5 14.2c2.7.4 4.5 2.6 4.5 5.8"/></svg><b>TA (Mentor) / Administrator</b><span class="sub">&middot; MICTSETA Graduate Program</span></div>
+        <div class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><b>Web Development WIL Intern</b><span class="sub">&middot; Kamikaze Innovations</span></div>
+        <div class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><circle cx="8" cy="9.5" r="1.6" fill="currentColor" stroke="none"/><path d="M13 8h6M13 11h6M4 17l3-3 2 2 3-4 3 3"/></svg><b>IT Admin</b><span class="sub">&middot; Hajoo Holdings</span></div>
+        <div class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3-6 7-6s7 2.7 7 6"/><circle cx="18" cy="8" r="2.4"/><path d="M15.5 14.2c2.7.4 4.5 2.6 4.5 5.8"/></svg><b>Student mentorship</b><span class="sub">&middot; supervised 5 WIL project managers</span></div>
+        <div class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><b>Multimedia Specialist</b><span class="sub">&middot; Frontend Engineer</span></div>
+        <div class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><circle cx="8" cy="9.5" r="1.6" fill="currentColor" stroke="none"/><path d="M13 8h6M13 11h6M4 17l3-3 2 2 3-4 3 3"/></svg><b>Advancement Intern Administrator</b><span class="sub">&middot; CPUT</span></div>
+        <div class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><b>Project Manager</b><span class="sub">&middot; CPUT IT Department</span></div>
+        <div class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3-6 7-6s7 2.7 7 6"/><circle cx="18" cy="8" r="2.4"/><path d="M15.5 14.2c2.7.4 4.5 2.6 4.5 5.8"/></svg><b>TA (Mentor) / Administrator</b><span class="sub">&middot; MICTSETA Graduate Program</span></div>
+        <div class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><b>Web Development WIL Intern</b><span class="sub">&middot; Kamikaze Innovations</span></div>
+        <div class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><circle cx="8" cy="9.5" r="1.6" fill="currentColor" stroke="none"/><path d="M13 8h6M13 11h6M4 17l3-3 2 2 3-4 3 3"/></svg><b>IT Admin</b><span class="sub">&middot; Hajoo Holdings</span></div>
+        <div class="marquee-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3-6 7-6s7 2.7 7 6"/><circle cx="18" cy="8" r="2.4"/><path d="M15.5 14.2c2.7.4 4.5 2.6 4.5 5.8"/></svg><b>Student mentorship</b><span class="sub">&middot; supervised 5 WIL project managers</span></div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-role">
+          <span class="years">Current</span>
+          <h3>Advancement Department Intern Administrator</h3>
+          <div class="org">Cape Peninsula University of Technology</div>
+        </div>
+        <div class="tl-detail">
+          <p>Administrator in CPUT's Advancement Department.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-role">
+          <span class="years">Jun 2025 &ndash; Jun 2026</span>
+          <h3>WIL Multimedia Project Manager &amp; Administrator</h3>
+          <div class="org">CPUT IT Department</div>
+        </div>
+        <div class="tl-detail">
+          <p>Coordinated the Huawei ICT Academy and Cisira school web projects: development, content management and project tracking. Supervised 5 WIL project managers through their graduate programme and supported SETA WIL funding administration.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-role">
+          <span class="years">Jun 2024 &ndash; May 2025</span>
+          <h3>TA (Mentor) / WIL Project Manager &amp; Administrator</h3>
+          <div class="org">CPUT IT Department &middot; 12-month MICTSETA Graduate Program</div>
+        </div>
+        <div class="tl-detail">
+          <p>Managed records for 330+ interns, 345 WIL programmes and 238 SETA applicants, and tracked intern compliance and documentation.</p>
+          <p>Mentored and guided third-year Multimedia ICT WIL students on web development, UI/UX and branding, and managed and supported the Langa Baptist Church web development project for a graduate programme for CPUT multimedia students.</p>
+          <p>Other roles include SETA administrative support and TA administration.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-role">
+          <span class="years">Jun &ndash; Dec 2023</span>
+          <h3>Web Development WIL Intern (In-Service Training)</h3>
+          <div class="org">Kamikaze Innovations &middot; 6 months</div>
+        </div>
+        <div class="tl-detail">
+          <p>Built a brand identity and guide from the ground up, then designed and developed a fully responsive website from the client's vision, completing the full development of the site.</p>
+          <p>Delivered as my WIL for 'Project Presentation 3' in my 3rd year of the Diploma, including website content updates, layout improvements and branding integration, using front-end technologies to create user-friendly digital experiences.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-role">
+          <span class="years">2018 &ndash; 2023</span>
+          <h3>Earlier work</h3>
+          <div class="org">Big D Catering, Akirah Beauty, Totalsport</div>
+        </div>
+        <div class="tl-detail">
+          <p>Part-time waiter, beautician and seasonal sales associate: customer-facing roles that built my communication and deadline habits.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     EDUCATION & AWARDS — Academic Background & Honours
+============================================================ -->
+<section class="education" id="education">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Academic background &amp; honours</p>
+      <h2 class="section-title">Education &amp; Awards</h2>
+    </div>
+    <div class="edu-grid">
+      <div>
+        <h3 class="edu-subhead">Qualifications</h3>
+        <ul class="edu-list">
+          <li>
+            <b>Postgraduate Diploma in Information Technology</b>
+            <span>Cape Peninsula University of Technology &middot; Majoring in Software Engineering &middot; 2026</span>
+          </li>
+          <li>
+            <b>Diploma in ICT: Multimedia Applications</b>
+            <span>Cape Peninsula University of Technology &middot; 6 years of IT study and practical work</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="edu-subhead">Awards &amp; Recognition</h3>
+        <ul class="award-list">
+          <li>
+            <b>Dean's Special Merit Award (2&times; Recipient)</b>
+            <span>Recognised twice by the Faculty Dean for outstanding academic excellence and achievement.</span>
+          </li>
+          <li>
+            <b>MICTSETA Certificate of Appreciation</b>
+            <span>Awarded for administrative dedication and leadership during the 12-month graduate programme.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     WORK — Brand-Building Project Case Studies
+============================================================ -->
+<section id="work">
+  <div class="wrap">
+    <div class="section-head work-intro">
+      <p class="kicker">Selected work</p>
+      <h2 class="section-title">Brand-building projects</h2>
+      <p class="section-sub">Three full identities designed and built from the ground up &mdash; brand guide, mock-ups and the website that carries them. Tap any image to view it full size.</p>
+    </div>
+
+    <!-- Project 1: Skinky Skin -->
+    <div class="project skinky">
+      <div class="project-head">
+        <div>
+          <div class="tag">01 &middot; Skincare brand identity</div>
+          <h3>Skinky Skin</h3>
+          <p>A warm, minimal skincare identity: logo system, type &amp; colour palette, product mock-ups and a full website design rooted in nature &amp; science.</p>
+        </div>
+        <ul class="proj-chips" aria-label="Deliverables">
+          <li>Logo system</li>
+          <li>Brand guide</li>
+          <li>Colour &amp; type</li>
+          <li>Product mock-ups</li>
+          <li>Website design</li>
+        </ul>
+      </div>
+      <div class="project-media">
+        <figure class="shot"><img loading="lazy" decoding="async" src="images/skinky-skin-brand-guide.png" alt="Skinky Skin brand guide"><figcaption>Brand guide</figcaption></figure>
+        <figure class="shot"><img loading="lazy" decoding="async" src="images/skinky-skin-product-mockups.png" alt="Skinky Skin product mock-ups"><figcaption>Mock-up designs</figcaption></figure>
+        <figure class="shot"><img loading="lazy" decoding="async" src="images/skinky-skin-website.png" alt="Skinky Skin website design"><figcaption>Website design</figcaption></figure>
+      </div>
+    </div>
+
+    <!-- Project 2: Aura Reels -->
+    <div class="project aura">
+      <div class="project-head">
+        <div>
+          <div class="tag">02 &middot; Streaming brand identity</div>
+          <h3>Aura Reels</h3>
+          <p>A bold, cinematic identity for a movie-rental platform &mdash; brand guide, moodboard, and matching website &amp; mobile app mock-ups.</p>
+        </div>
+        <ul class="proj-chips" aria-label="Deliverables">
+          <li>Brand guide</li>
+          <li>Moodboard</li>
+          <li>Web mock-up</li>
+          <li>Mobile app UI</li>
+        </ul>
+      </div>
+      <div class="project-media">
+        <figure class="shot"><img loading="lazy" decoding="async" src="images/aura-reels-brand-guide.png" alt="Aura Reels brand guide"><figcaption>Brand guide</figcaption></figure>
+        <figure class="shot"><img loading="lazy" decoding="async" src="images/aura-reels-mockup.png" alt="Aura Reels website and app mock-up"><figcaption>Website &amp; app mock-up</figcaption></figure>
+        <figure class="shot"><img loading="lazy" decoding="async" src="images/aura-reels-moodboard.png" alt="Aura Reels moodboard"><figcaption>Moodboard</figcaption></figure>
+      </div>
+      <div class="aura-links">
+        <a href="https://canva.link/28rfb7qmjlwob3v" target="_blank" rel="noopener">View full web presentation &rarr;</a>
+        <a href="https://canva.link/21higy8j8sclh2o" target="_blank" rel="noopener">View full mobile presentation &rarr;</a>
+        <a href="https://github.com/ThaakirahA/movie-rental-system" target="_blank" rel="noopener">Github Software architecture plan &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Project 3: StudentPlate -->
+    <div class="project studentplate">
+      <div class="project-head">
+        <div>
+          <div class="tag">03 &middot; Food &amp; lifestyle app</div>
+          <h3>StudentPlate</h3>
+          <p>A budget-friendly meal site for students &mdash; brand guide, moodboard and app UI, plus a live, responsive website with accessibility built in: adjustable text size and a high-contrast mode.</p>
+        </div>
+        <ul class="proj-chips" aria-label="Deliverables">
+          <li>Brand guide</li>
+          <li>Moodboard</li>
+          <li>Mobile app UI</li>
+          <li>Live website</li>
+          <li>Accessibility features</li>
+        </ul>
+      </div>
+      <div class="project-media">
+        <figure class="shot"><img loading="lazy" decoding="async" src="images/studentplate-brand-guide.png" alt="StudentPlate brand guide"><figcaption>Brand guide</figcaption></figure>
+        <figure class="shot"><img loading="lazy" decoding="async" src="images/studentplate-app-ui.png" alt="StudentPlate mobile app screens"><figcaption>App UI</figcaption></figure>
+        <figure class="shot"><img loading="lazy" decoding="async" src="images/studentplate-web.png" alt="StudentPlate website screenshot"><figcaption>Website</figcaption></figure>
+      </div>
+      <div class="aura-links">
+        <a href="https://thaakiraha.github.io/Budget-Friendly-Student-Meals/" target="_blank" rel="noopener">View live site &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Click-to-Zoom Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <img id="lbImg" alt="">
+  <p id="lbCap"></p>
+</div>
+
+
+<!-- ============================================================
+     LOGOS — Logo Design Gallery (Dark / Light Backgrounds)
+============================================================ -->
+<section id="logos">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Marks &amp; symbols</p>
+      <h2 class="section-title">Logo design</h2>
+    </div>
+    <div class="logo-groups">
+      <div class="logo-group">
+        <h4>For dark backgrounds</h4>
+        <img loading="lazy" decoding="async" src="images/logo-designs-dark.png" alt="Dark logo designs: Akirah Designs, SFX, Renewed Resilience, Aura Reels">
+      </div>
+      <div class="logo-group">
+        <h4>For light backgrounds</h4>
+        <img loading="lazy" decoding="async" src="images/logo-designs-light.png" alt="Light logo designs: Akirah Beauty, Cherry Bakes, Darnell Davids Decor, The Frying Dutchman, Summer Side">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     WEBSITES — Live Site Build Links (Managed + Own Work)
+============================================================ -->
+<section id="websites">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Live builds</p>
+      <h2 class="section-title">Websites</h2>
+    </div>
+    <div class="web-groups">
+      <div class="web-group">
+        <h4>Project managed / mentored</h4>
+        <div class="web-entry">
+          <div class="name">Cisira Primary</div>
+          <a href="https://thaakiraha.github.io/Cisira-Primary_Website/" target="_blank" rel="noopener">View site &rarr;</a>
+        </div>
+        <div class="web-entry">
+          <div class="name">Langa Baptist</div>
+          <a href="https://www.langabaptist.org/" target="_blank" rel="noopener">View site &rarr;</a>
+        </div>
+        <div class="web-entry">
+          <div class="name">Huawei ICT WIL Projects</div>
+          <a href="https://thaakiraha.github.io/Huawei_ICT_WIL_Projects/" target="_blank" rel="noopener">View site &rarr;</a>
+        </div>
+        <p class="fine">I've mentored students and managed numerous website projects &mdash; the work shown here is a small selection of that experience.</p>
+      </div>
+      <div class="web-group">
+        <h4>My own work</h4>
+        <div class="web-entry">
+          <div class="name">Timetabling System</div>
+          <a href="https://thaakiraha.github.io/UniversityTimetablingSystem/" target="_blank" rel="noopener">View site &rarr;</a>
+          <div class="note">New version &mdash;</div>
+        </div>
+        <div class="web-entry">
+          <div class="name">Student Plate</div>
+          <a href="https://thaakiraha.github.io/Budget-Friendly-Student-Meals/" target="_blank" rel="noopener">View site &rarr;</a>
+        </div>
+        <div class="web-entry">
+          <div class="name">Student Mark Tracker</div>
+          <a href="https://thaakiraha.github.io/student-mark-tracker/" target="_blank" rel="noopener">View site &rarr;</a>
+        </div>
+        <div class="web-entry">
+          <div class="name">Whack-a-mole game</div>
+          <a href="https://thaakiraha.github.io/whack-a-mole-game/" target="_blank" rel="noopener">View site &rarr;</a>
+        </div>
+        <p class="fine">I've worked on many more sites &mdash; these examples were chosen to show a range of skills and experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CONTACT / FOOTER — Contact Details + Copy Buttons
+============================================================ -->
+<footer id="contact">
+  <div class="wrap footer-inner">
+    <span class="accent">Let's build something</span>
+    <h2>Get in touch</h2>
+    <div class="contact-row">
+      <div class="contact-item">Phone &middot; <a href="tel:+27671479444">+27 67 147 9444</a> <button class="copy-btn" data-copy="+27671479444" aria-label="Copy phone number">Copy</button></div>
+      <div class="contact-item">Email &middot; <a href="mailto:thaakirahagherdien1414@gmail.com">thaakirahagherdien1414@gmail.com</a> <button class="copy-btn" data-copy="thaakirahagherdien1414@gmail.com" aria-label="Copy email address">Copy</button></div>
+      <div class="contact-item">LinkedIn &middot; <a href="https://www.linkedin.com/in/thaakirah-agherdien-0528a52aa" target="_blank" rel="noopener">Thaakirah Agherdien</a></div>
+      <div class="contact-item">Location &middot; Cape Town, Western Cape</div>
+      <div class="contact-item">Driver's licence &middot; Yes</div>
+    </div>
+    <div class="toast" id="copyToast">Copied to clipboard</div>
+    <div class="foot-bottom">
+      <span>&copy; Thaakirah Agherdien</span>
+      <span>Multimedia Specialist / Frontend Engineer &middot; Cape Town</span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" class="to-top" aria-label="Back to top">&uarr;</button>
+
+
+<!-- ============================================================
+     SCRIPTS
+============================================================ -->
+<script>
+  (function(){
+    var nav = document.getElementById('mainNav');
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+    if(!toggle || !links) return;
+
+    function closeMenu(){
+      toggle.classList.remove('open');
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    }
+    toggle.addEventListener('click', function(){
+      var isOpen = links.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', closeMenu);
+    });
+
+    /* scrollspy & sticky header elevation */
+    var navAnchors = links.querySelectorAll('a[href^="#"]');
+    var sections = [];
+    navAnchors.forEach(function(a){
+      var sec = document.querySelector(a.getAttribute('href'));
+      if(sec) sections.push({link:a, el:sec});
+    });
+    function onScroll(){
+      var pos = window.scrollY + 140;
+      var current = null;
+      var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+
+      if(nav) nav.classList.toggle('scrolled', window.scrollY > 30);
+
+      if(atBottom){
+        current = sections[sections.length - 1];
+      } else {
+        sections.forEach(function(s){
+          if(s.el.offsetTop <= pos) current = s;
+        });
+      }
+      sections.forEach(function(s){ s.link.classList.toggle('active', s === current); });
+
+      var toTop = document.getElementById('toTop');
+      if(toTop) toTop.classList.toggle('show', window.scrollY > 500);
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+
+    /* copy to clipboard */
+    var toast = document.getElementById('copyToast');
+    var toastTimer;
+    function showToast(msg){
+      if(!toast) return;
+      toast.textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 1800);
+    }
+    function fallbackCopy(val){
+      try {
+        var ta = document.createElement('textarea');
+        ta.value = val;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showToast('Copied to clipboard');
+      } catch(e) {
+        showToast(val);
+      }
+    }
+    document.querySelectorAll('.copy-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var val = btn.getAttribute('data-copy');
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(val).then(function(){ showToast('Copied to clipboard'); }).catch(function(){ fallbackCopy(val); });
+        } else {
+          fallbackCopy(val);
+        }
+      });
+    });
+
+    /* back to top */
+    var toTopBtn = document.getElementById('toTop');
+    if(toTopBtn){
+      toTopBtn.addEventListener('click', function(){
+        window.scrollTo({top:0, behavior:'smooth'});
+      });
+    }
+
+    /* scroll reveal */
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!reduceMotion && 'IntersectionObserver' in window){
+      var groups = [
+        document.querySelectorAll('.section-head'),
+        document.querySelectorAll('.tl-item'),
+        document.querySelectorAll('.edu-grid'),
+        document.querySelectorAll('.project'),
+        document.querySelectorAll('.fact'),
+        document.querySelectorAll('.logo-group'),
+        document.querySelectorAll('.web-group')
+      ];
+      groups.forEach(function(group){
+        group.forEach(function(el, i){
+          el.classList.add('reveal');
+          el.style.transitionDelay = (Math.min(i, 5) * 60) + 'ms';
+        });
+      });
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            var el = entry.target;
+            el.classList.add('in-view');
+            io.unobserve(el);
+            var delay = parseFloat(el.style.transitionDelay) || 0;
+            setTimeout(function(){
+              el.classList.remove('reveal', 'in-view');
+              el.style.transitionDelay = '';
+            }, 750 + delay);
+          }
+        });
+      }, {threshold:0.12, rootMargin:'0px 0px -30px 0px'});
+      document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+    }
+  })();
+</script>
+
+<script>
+/* Hero Starfield: Deep space stars flying toward the viewer */
+(function(){
+  var cv=document.getElementById('heroStars'); if(!cv) return;
+  var ctx=cv.getContext('2d'), W=0, H=0, stars=[], N=220, SPEED=0.0035, raf=0, visible=true;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function make(z){return {x:(Math.random()-.5)*2,y:(Math.random()-.5)*2,z:z||Math.random()*0.95+0.05,c:Math.random()<.3?'159,231,238':'255,255,255'};}
+  function resize(){
+    var d=Math.min(window.devicePixelRatio||1,2);
+    W=cv.clientWidth;H=cv.clientHeight;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0);
+    if(reduce) draw(true);
+  }
+  function px(s,z){var k=W*0.25/z;return [W/2+s.x*k,H/2+s.y*k];}
+  function draw(still){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<stars.length;i++){
+      var s=stars[i], p1=px(s,s.z);
+      if(!still){
+        var p0=px(s,s.z+SPEED*5);
+        ctx.strokeStyle='rgba('+s.c+','+(1-s.z)*0.9+')';
+        ctx.lineWidth=(1-s.z)*2+0.3;
+        ctx.beginPath();ctx.moveTo(p0[0],p0[1]);ctx.lineTo(p1[0],p1[1]);ctx.stroke();
+        s.z-=SPEED*(1+(1-s.z)*1.5);
+        if(s.z<0.03||p1[0]<0||p1[0]>W||p1[1]<0||p1[1]>H) stars[i]=make(1);
+      } else {
+        ctx.fillStyle='rgba('+s.c+','+(1-s.z)*0.8+')';
+        ctx.fillRect(p1[0],p1[1],1.5,1.5);
+      }
+    }
+  }
+  function loop(){ if(!visible||document.hidden){raf=0;return;} draw(false); raf=requestAnimationFrame(loop); }
+  function start(){ if(!raf&&!reduce) raf=requestAnimationFrame(loop); }
+  for(var i=0;i<N;i++) stars.push(make());
+  resize(); window.addEventListener('resize',resize);
+  if(!reduce){
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(e){visible=e[0].isIntersecting;if(visible)start();}).observe(cv);
+    }
+    document.addEventListener('visibilitychange',start);
+    start();
+  }
+})();
+</script>
+
+<script>
+/* About Section: Layered 3D parallax portrait with mouse tracking */
+(function(){
+  var host=document.querySelector('.about-photo'); if(!host) return;
+  var img=host.querySelector('.about-fallback'); if(!img) return;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var wrap=document.createElement('div'); wrap.className='tilt';
+  var card=document.createElement('div'); card.className='tilt-card';
+  var frame=document.createElement('div'); frame.className='tilt-img';
+  img.parentNode.insertBefore(wrap,img); frame.appendChild(img);
+  var glare=document.createElement('div'); glare.className='tilt-glare'; frame.appendChild(glare);
+  card.appendChild(frame);
+  [['</>','c1'],['UI','c2'],['{ }','c3']].forEach(function(d){var c=document.createElement('span'); c.className='chip '+d[1]; c.textContent=d[0]; c.setAttribute('aria-hidden','true'); card.appendChild(c);});
+  wrap.appendChild(card);
+
+  var tx=0,ty=0,cx=0,cy=0,over=false,t=0,vis=true,raf=0,draw=null,gl=null,cv=null;
+
+  var fbStarted=false;
+  function fail(){
+    gl=null; draw=null; if(fbStarted) return; fbStarted=true;
+    var src=new Image(), tried=0, orig=img.getAttribute('src'), list=[orig, orig.replace(/^.*\//,'')];
+    function next(){ if(tried>=list.length) return; src.src=list[tried++]; }
+    src.onerror=next;
+    src.onload=function(){
+      var c2=document.createElement('canvas'); c2.className='tilt-gl'; var ctx=c2.getContext('2d'); if(!ctx) return;
+      frame.insertBefore(c2,img); img.style.display='none';
+      var EY=[{x:325,y:396,a:.15,px:325,py:391},{x:483,y:396,a:-.15,px:484,py:390}];
+      draw=function(x,y,gx,gy){
+        var w=frame.clientWidth,h=frame.clientHeight; if(!w||!h) return;
+        var d=Math.min(window.devicePixelRatio||1,2);
+        if(c2.width!==Math.round(w*d)){c2.width=Math.round(w*d);c2.height=Math.round(h*d);}
+        var k=Math.max(w/800,h/1071), dw=800*k, dh=1071*k, ox=(w-dw)*.5, oy=(h-dh)*.2;
+        ctx.setTransform(d,0,0,d,0,0); ctx.fillStyle='#050506'; ctx.fillRect(0,0,w,h);
+        ctx.drawImage(src,ox,oy,dw,dh);
+        var offx=(gx||0)*10, offy=(gy||0)*4;
+        EY.forEach(function(e){
+          ctx.save(); ctx.translate(ox,oy); ctx.scale(k,k);
+          ctx.beginPath(); ctx.ellipse(e.x,e.y,39,12,e.a,0,Math.PI*2); ctx.clip();
+          ctx.fillStyle='rgb(236,230,225)'; ctx.fillRect(e.x-60,e.y-30,120,60);
+          ctx.beginPath(); ctx.arc(e.px+offx,e.py+offy,19,0,Math.PI*2); ctx.clip();
+          ctx.drawImage(src,offx,offy,800,1071);
+          ctx.restore();
+        });
+      };
+      draw(0,0,0,0);
+    };
+    next();
+  }
+
+  function initGL(){
+    cv=document.createElement('canvas'); cv.className='tilt-gl';
+    gl=cv.getContext('webgl',{antialias:true,alpha:false}); if(!gl){fail();return;}
+    var vs='attribute vec2 p;varying vec2 v;void main(){v=p*.5+.5;gl_Position=vec4(p,0.,1.);}';
+    var fs='#ifdef GL_FRAGMENT_PRECISION_HIGH\nprecision highp float;\n#else\nprecision mediump float;\n#endif\nuniform sampler2D im,dp;uniform vec2 m,a,g;varying vec2 v;const vec2 S=vec2(800.,1071.);'+
+    'vec3 T(vec2 p){return texture2D(im,vec2(p.x/S.x,1.-p.y/S.y)).rgb;}'+
+    'vec3 eye(vec3 col,vec2 px,vec2 ec,float an,vec2 pc,vec2 sp,vec2 off){vec2 p=px-ec;float ca=cos(an),sa=sin(an);vec2 r=vec2(p.x*ca+p.y*sa,-p.x*sa+p.y*ca);vec2 n=r/vec2(39.,12.);float mk=1.-smoothstep(.8,1.,dot(n,n));if(mk<=0.)return col;vec3 sc=T(sp);vec3 ir=T(px-off);vec3 res=mix(sc,ir,1.-smoothstep(17.5,19.,length(px-pc-off)));return mix(col,res,mk);}'+
+    'void main(){vec2 u=(v-.5)*a/1.1+.5;float d=texture2D(dp,u).r;vec2 q=clamp(u+m*(d-.3)*.05,0.,1.);vec3 c=texture2D(im,q).rgb;vec2 px=vec2(q.x*S.x,(1.-q.y)*S.y);vec2 off=vec2(g.x*10.,g.y*4.);c=eye(c,px,vec2(325.,396.),.15,vec2(325.,391.),vec2(352.,399.),off);c=eye(c,px,vec2(483.,396.),-.15,vec2(484.,390.),vec2(458.,399.),off);gl_FragColor=vec4(c,1.);}';
+    function sh(type,src){var s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);return s;}
+    var pr=gl.createProgram(); gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs)); gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs)); gl.linkProgram(pr);
+    if(!gl.getProgramParameter(pr,gl.LINK_STATUS)){fail();return;}
+    gl.useProgram(pr);
+    var b=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,b); gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+    var lp=gl.getAttribLocation(pr,'p'); gl.enableVertexAttribArray(lp); gl.vertexAttribPointer(lp,2,gl.FLOAT,false,0,0);
+    var uM=gl.getUniformLocation(pr,'m'), uA=gl.getUniformLocation(pr,'a'), uG=gl.getUniformLocation(pr,'g');
+    gl.uniform1i(gl.getUniformLocation(pr,'im'),0); gl.uniform1i(gl.getUniformLocation(pr,'dp'),1);
+    gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,true);
+    var ia=img.dataset.aspect?+img.dataset.aspect:.747, loaded=0;
+    function tx_(el,unit){var tt=gl.createTexture(); gl.activeTexture(gl.TEXTURE0+unit); gl.bindTexture(gl.TEXTURE_2D,tt);
+      gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,el);
+      gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);}
+    function ready(){
+      if(++loaded<2) return;
+      try{ tx_(pic,0); tx_(dep,1); }catch(e){ fail(); return; }
+      frame.insertBefore(cv,img); img.style.display='none';
+      draw=function(x,y,gx,gy){
+        var w=frame.clientWidth,h=frame.clientHeight; if(!w||!h) return;
+        var d=Math.min(window.devicePixelRatio||1,2); if(cv.width!==Math.round(w*d)){cv.width=Math.round(w*d);cv.height=Math.round(h*d);gl.viewport(0,0,cv.width,cv.height);}
+        var fa=w/h; gl.uniform2f(uA,fa>ia?1:fa/ia,fa>ia?ia/fa:1); gl.uniform2f(uM,x,-y); gl.uniform2f(uG,gx||0,gy||0); gl.drawArrays(gl.TRIANGLE_STRIP,0,4);
+      };
+      if(reduce) draw(0,0);
+    }
+    var pic=new Image(), dep=new Image();
+    pic.onload=function(){ia=pic.width/pic.height;ready();}; dep.onload=ready; pic.onerror=dep.onerror=function(){fail();};
+    var u1=img.getAttribute('src'), u2=u1.replace('about-portrait','about-depth');
+    function go(a,b){pic.src=a; dep.src=b;}
+    if(location.protocol==='file:'){
+      var ds=document.createElement('script'); ds.src=u1.replace('about-portrait.jpg','portrait-data.js');
+      ds.onload=function(){ if(window.PORTRAIT_DATA) go(window.PORTRAIT_DATA.img,window.PORTRAIT_DATA.dep); else fail(); };
+      ds.onerror=function(){fail();}; document.head.appendChild(ds);
+    } else go(u1,u2);
+  }
+  try{ initGL(); }catch(e){ fail(); }
+  if(reduce) return;
+  function set(e){var b=host.getBoundingClientRect(); tx=Math.max(-1,Math.min(1,((e.clientX-b.left)/b.width-.5)*2)); ty=Math.max(-1,Math.min(1,((e.clientY-b.top)/b.height-.5)*2));}
+  host.addEventListener('pointermove',function(e){over=true; set(e);});
+  host.addEventListener('pointerleave',function(){over=false;});
+
+  var gt=[0,.05], gc=[0,.05], lastMove=-9999;
+  window.addEventListener('pointermove',function(e){var b=card.getBoundingClientRect(); var ex=b.left+b.width*.5, ey=b.top+b.height*.37; var dx=e.clientX-ex,dy=e.clientY-ey,len=Math.hypot(dx,dy)||1,k=Math.min(1,len/260)/len; gt=[dx*k,dy*k]; lastMove=performance.now();});
+  function frameFn(){
+    t+=.016; var gx=over?tx:Math.sin(t*.6)*.55, gy=over?ty:Math.cos(t*.5)*.3;
+    cx+=(gx-cx)*.08; cy+=(gy-cy)*.08;
+    card.style.transform='rotateY('+(cx*7)+'deg) rotateX('+(-cy*5)+'deg)';
+    card.style.setProperty('--gx',(50+cx*40)+'%'); card.style.setProperty('--gy',(35+cy*40)+'%');
+    if(performance.now()-lastMove>3500) gt=[Math.sin(t*.45)*.7,Math.sin(t*.3)*.25];
+    gc[0]+=(gt[0]-gc[0])*.15; gc[1]+=(gt[1]-gc[1])*.15;
+    if(draw) draw(cx,cy,gc[0],gc[1]);
+  }
+  function loop(){ if(!vis||document.hidden){raf=0;return;} frameFn(); raf=requestAnimationFrame(loop); }
+  function start(){ if(!raf) raf=requestAnimationFrame(loop); }
+  if('IntersectionObserver' in window) new IntersectionObserver(function(e){vis=e[0].isIntersecting; if(vis) start();}).observe(host);
+  document.addEventListener('visibilitychange',start); start();
+})();
+</script>
+
+<script>
+/* About Section: Slow twinkling starfield with cursor depth, soft nebula glow & shooting star */
+(function(){
+  var sec=document.getElementById('about'); if(!sec) return;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cv=document.createElement('canvas'); cv.className='about-stars'; cv.setAttribute('aria-hidden','true');
+  var ctx=cv.getContext('2d'); if(!ctx) return;
+  sec.insertBefore(cv,sec.firstChild);
+
+  var W=0,H=0,D=1,stars=[],shoot=null,nextShoot=0,vis=true,raf=0,last=0,t=0,mx=0,my=0,px=0,py=0;
+  var TINTS=['255,255,255','255,255,255','210,236,255','159,231,238','111,179,236'];
+
+  var spr=document.createElement('canvas'); spr.width=spr.height=64; var sc=spr.getContext('2d');
+  var g=sc.createRadialGradient(32,32,0,32,32,32); g.addColorStop(0,'rgba(255,255,255,1)'); g.addColorStop(.18,'rgba(255,255,255,.55)'); g.addColorStop(1,'rgba(255,255,255,0)');
+  sc.fillStyle=g; sc.fillRect(0,0,64,64);
+
+  function make(){
+    var z=Math.random();
+    return {x:Math.random(),y:Math.random(),z:z,r:.6+z*1.5+(Math.random()<.06?1:0),a:.5+z*.5,
+            ph:Math.random()*6.283,sp:.5+Math.random()*1.6,c:TINTS[(Math.random()*TINTS.length)|0],big:Math.random()<.08};
+  }
+  function resize(){
+    var w=sec.clientWidth,h=sec.clientHeight; if(!w||!h) return;
+    D=Math.min(window.devicePixelRatio||1,2);
+    if(cv.width!==Math.round(w*D)||cv.height!==Math.round(h*D)){
+      cv.width=Math.round(w*D); cv.height=Math.round(h*D); W=w; H=h;
+      var n=Math.max(80,Math.min(220,Math.round(w*h/7500)));
+      while(stars.length<n) stars.push(make()); stars.length=n;
+    }
+  }
+  function blob(x,y,r,rgb,a){var gr=ctx.createRadialGradient(x,y,0,x,y,r);gr.addColorStop(0,'rgba('+rgb+','+a+')');gr.addColorStop(1,'rgba('+rgb+',0)');ctx.fillStyle=gr;ctx.fillRect(x-r,y-r,r*2,r*2);}
+
+  var host=document.querySelector('.about-photo'), mpx=-9999, mpy=-9999;
+  function ring(cx,cy,rx,ry,rot,al,dash,sp,dr){
+    ctx.save(); ctx.translate(cx,cy); ctx.rotate(rot);
+    ctx.strokeStyle='rgba(111,179,236,'+al+')'; ctx.lineWidth=1; ctx.setLineDash(dash||[]);
+    ctx.beginPath(); ctx.ellipse(0,0,rx,ry,0,0,6.2832); ctx.stroke(); ctx.setLineDash([]);
+    var a=t*sp, dx=Math.cos(a)*rx, dy=Math.sin(a)*ry;
+    ctx.globalAlpha=.9; ctx.drawImage(spr,dx-dr*5,dy-dr*5,dr*10,dr*10);
+    ctx.fillStyle='#e6f6ff'; ctx.beginPath(); ctx.arc(dx,dy,dr*.45,0,6.2832); ctx.fill(); ctx.globalAlpha=1; ctx.restore();
+  }
+  function draw(dt){
+    resize(); if(!W) return;
+    ctx.setTransform(D,0,0,D,0,0); ctx.clearRect(0,0,W,H);
+    var R=Math.max(W,H);
+    blob(W*.12+Math.sin(t*.07)*W*.03,H*.18+Math.cos(t*.06)*H*.03,R*.42,'47,111,214',.04);
+    blob(W*.85+Math.cos(t*.05)*W*.03,H*.75+Math.sin(t*.05)*H*.03,R*.38,'20,60,130',.08);
+    if(host){
+      var hb=host.getBoundingClientRect(), sb=sec.getBoundingClientRect();
+      var pcx=hb.left-sb.left+hb.width/2, pcy=hb.top-sb.top+hb.height/2, pw=hb.width, ph=hb.height;
+      blob(pcx,pcy,Math.max(pw,ph)*.85,'47,111,214',.2);
+      ring(pcx,pcy,pw*.64,ph*.55,-.35,.17,null,.22,3.2);
+      ring(pcx,pcy,pw*.78,ph*.66,.5,.11,[2,7],-.15,2.4);
+    }
+    px+=(mx-px)*.05; py+=(my-py)*.05;
+    for(var i=0;i<stars.length;i++){
+      var s=stars[i];
+      s.y-=dt*.004*(.3+s.z); s.x+=dt*.0012*(.3+s.z);
+      if(s.y<-.02){s.y=1.02;s.x=Math.random();} if(s.x>1.02) s.x=-.02;
+      var x=s.x*W+px*s.z*22, y=s.y*H+py*s.z*14; s.px=x; s.py=y;
+      var tw=.55+.45*Math.sin(t*s.sp+s.ph), a=s.a*tw;
+      if(s.big){ctx.globalAlpha=a*.9;var gs=s.r*9;ctx.drawImage(spr,x-gs,y-gs,gs*2,gs*2);}
+      ctx.globalAlpha=Math.min(1,a+.1); ctx.fillStyle='rgb('+s.c+')';
+      ctx.beginPath(); ctx.arc(x,y,s.r,0,6.2832); ctx.fill();
+    }
+    ctx.globalAlpha=1;
+    ctx.lineWidth=.8; var LK=W<700?80:110;
+    for(var i=0;i<stars.length;i++){var s1=stars[i]; if(s1.z<.3) continue;
+      for(var j=i+1;j<stars.length;j++){var s2=stars[j]; if(s2.z<.3) continue;
+        var ddx=s1.px-s2.px, ddy=s1.py-s2.py, dd=ddx*ddx+ddy*ddy;
+        if(dd<LK*LK){ctx.strokeStyle='rgba(159,210,240,'+(1-Math.sqrt(dd)/LK)*.12+')';ctx.beginPath();ctx.moveTo(s1.px,s1.py);ctx.lineTo(s2.px,s2.py);ctx.stroke();}}
+      var cdx=s1.px-mpx, cdy=s1.py-mpy, cd=Math.sqrt(cdx*cdx+cdy*cdy);
+      if(cd<170){ctx.strokeStyle='rgba(159,231,238,'+(1-cd/170)*.4+')';ctx.beginPath();ctx.moveTo(mpx,mpy);ctx.lineTo(s1.px,s1.py);ctx.stroke();}}
+    if(!reduce){
+      if(!shoot && t>nextShoot){shoot={x:W*(.35+Math.random()*.6),y:H*(.08+Math.random()*.3),vx:-(420+Math.random()*200),vy:170+Math.random()*90,age:0,life:.9};}
+      if(shoot){
+        shoot.age+=dt; var k=shoot.age/shoot.life;
+        if(k>=1){shoot=null;nextShoot=t+7+Math.random()*8;}
+        else{
+          var hx=shoot.x+shoot.vx*shoot.age, hy=shoot.y+shoot.vy*shoot.age, tl=.13, tx=hx-shoot.vx*tl, ty=hy-shoot.vy*tl;
+          var lg=ctx.createLinearGradient(hx,hy,tx,ty); var al=Math.sin(k*3.1416);
+          lg.addColorStop(0,'rgba(255,255,255,'+(.95*al)+')'); lg.addColorStop(1,'rgba(159,231,238,0)');
+          ctx.strokeStyle=lg; ctx.lineWidth=1.6; ctx.lineCap='round'; ctx.beginPath(); ctx.moveTo(hx,hy); ctx.lineTo(tx,ty); ctx.stroke();
+        }
+      }
+    }
+  }
+  function loop(now){
+    if(!vis||document.hidden){raf=0;last=0;return;}
+    var dt=last?Math.min(.05,(now-last)/1000):.016; last=now; t+=dt; draw(dt); raf=requestAnimationFrame(loop);
+  }
+  function start(){ if(!raf) raf=requestAnimationFrame(loop); }
+
+  if(reduce){ draw(0); window.addEventListener('resize',function(){draw(0);}); return; }
+  sec.addEventListener('pointermove',function(e){var b=sec.getBoundingClientRect(); mpx=e.clientX-b.left; mpy=e.clientY-b.top; mx=((e.clientX-b.left)/b.width-.5)*2; my=((e.clientY-b.top)/b.height-.5)*2;});
+  sec.addEventListener('pointerleave',function(){mx=0;my=0;mpx=-9999;mpy=-9999;});
+  nextShoot=3+Math.random()*3;
+  if('IntersectionObserver' in window) new IntersectionObserver(function(en){vis=en[0].isIntersecting;if(vis)start();}).observe(sec);
+  document.addEventListener('visibilitychange',start); start();
+})();
+</script>
+
+<script>
+/* ============================================================
+   SKILLS SOLAR SYSTEM — 3D Orbit, Zoom & Scrollytelling Engine
+============================================================ */
+(function(){
+  var section = document.getElementById('skills');
+  var sticky = document.getElementById('skillsSticky');
+  var stage = document.getElementById('orbitStage');
+  var header = document.getElementById('skillsCosmicHeader');
+  var cards = document.querySelectorAll('.planet-detail-card');
+  var hudPills = document.querySelectorAll('.hud-pill');
+  var planetAnchors = document.querySelectorAll('.planet-anchor[data-planet]');
+  var exploreBtn = document.getElementById('orbitExploreBtn');
+  var cv = document.getElementById('skillsStarsCanvas');
+  if(!section || !stage) return;
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Deep Cosmic Starfield Canvas ---------- */
+  if(cv){
+    var ctx = cv.getContext('2d');
+    var W = 0, H = 0, D = 1, stars = [], N = 240, raf = 0, vis = true, t = 0;
+    var TINTS = ['255,255,255', '255,255,255', '241,245,249', '186,230,253', '125,211,252', '199,210,254'];
+
+    function makeStar(){
+      return {
+        x: Math.random(),
+        y: Math.random(),
+        r: Math.random() * 1.5 + 0.4,
+        a: Math.random() * 0.7 + 0.3,
+        sp: Math.random() * 1.8 + 0.5,
+        ph: Math.random() * 6.28,
+        c: TINTS[(Math.random() * TINTS.length) | 0]
+      };
+    }
+
+    function resizeCanvas(){
+      var w = sticky.clientWidth, h = sticky.clientHeight;
+      if(!w || !h) return;
+      D = Math.min(window.devicePixelRatio || 1, 2);
+      if(cv.width !== Math.round(w * D) || cv.height !== Math.round(h * D)){
+        cv.width = Math.round(w * D);
+        cv.height = Math.round(h * D);
+        W = w; H = h;
+        while(stars.length < N) stars.push(makeStar());
+        stars.length = N;
+      }
+    }
+
+    function drawStars(){
+      resizeCanvas();
+      if(!W) return;
+      ctx.setTransform(D, 0, 0, D, 0, 0);
+      ctx.clearRect(0, 0, W, H);
+      t += 0.016;
+
+      for(var i = 0; i < stars.length; i++){
+        var s = stars[i];
+        var alpha = s.a * (0.55 + 0.45 * Math.sin(t * s.sp + s.ph));
+        ctx.globalAlpha = alpha;
+        ctx.fillStyle = 'rgb(' + s.c + ')';
+        ctx.beginPath();
+        ctx.arc(s.x * W, s.y * H, s.r, 0, 6.283);
+        ctx.fill();
+
+        // 4-point celestial diffraction flare for prominent stars
+        if(s.r > 1.35){
+          var fl = s.r * 3.8;
+          ctx.strokeStyle = 'rgba(' + s.c + ',' + (alpha * 0.7) + ')';
+          ctx.lineWidth = 0.8;
+          ctx.beginPath();
+          ctx.moveTo(s.x * W - fl, s.y * H);
+          ctx.lineTo(s.x * W + fl, s.y * H);
+          ctx.moveTo(s.x * W, s.y * H - fl);
+          ctx.lineTo(s.x * W, s.y * H + fl);
+          ctx.stroke();
+        }
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    function loopStars(){
+      if(!vis || document.hidden){ raf = 0; return; }
+      drawStars();
+      raf = requestAnimationFrame(loopStars);
+    }
+    function startStars(){ if(!raf && !reduceMotion) raf = requestAnimationFrame(loopStars); }
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(e){ vis = e[0].isIntersecting; if(vis) startStars(); }).observe(section);
+    }
+    startStars();
+  }
+
+  /* ---------- Planet Positions & Camera Math ---------- */
+  // Coordinate map on 1100x700 stage
+  var planetCoords = {
+    0: { x: 550, y: 350 }, // Center Mega Planet
+    1: { x: 750, y: 175 }, // Technical (Top-Right)
+    2: { x: 870, y: 350 }, // Design & multimedia (Right-Mid)
+    3: { x: 760, y: 525 }, // Web & tools (Bottom-Right)
+    4: { x: 340, y: 525 }, // Content & marketing (Bottom-Left)
+    5: { x: 230, y: 350 }, // Professional (Left-Mid)
+    6: { x: 350, y: 175 }  // Productivity tools (Top-Left)
+  };
+
+  var currentStep = -1;
+  var isAutoScrolling = false;
+  var autoScrollTimer = null;
+
+  function calculateCamera(stepIndex){
+    var W = window.innerWidth;
+    var H = window.innerHeight;
+    var isMobile = W <= 900;
+
+    if(stepIndex === 0){
+      if(isMobile){
+        // Mobile Overview: fit solar system neatly on any phone screen
+        var availW = W - 24;
+        var availH = H - 210;
+        var fitScaleW = availW / 830;
+        var fitScaleH = availH / 520;
+        var fitScale = Math.min(fitScaleW, fitScaleH);
+        var baseScale = Math.max(0.30, Math.min(fitScale, 0.60));
+
+        var topSpace = 150;
+        var bottomSpace = 54;
+        var visualCenterY = topSpace + (H - topSpace - bottomSpace) / 2;
+        var offsetY = visualCenterY - (H / 2);
+
+        return { scale: baseScale, x: 0, y: Math.round(offsetY) };
+      } else {
+        // Desktop Overview: full stage view with comfortable bounds
+        var availW = W - 80;
+        var availH = H - 160;
+        var fitScaleW = availW / 1060;
+        var fitScaleH = availH / 660;
+        var fitScale = Math.min(fitScaleW, fitScaleH);
+        var baseScale = Math.min(fitScale, 1.05);
+        return { scale: baseScale, x: 0, y: 10 };
+      }
+    }
+
+    var pt = planetCoords[stepIndex] || planetCoords[0];
+    var S = isMobile ? 1.25 : 2.45;
+
+    // Target positions:
+    // On desktop, position zoomed planet on the left side (~22% of screen)
+    // On mobile, center horizontally and lift into upper viewport
+    var targetScreenX = isMobile ? 0 : -(W * 0.22);
+    var targetScreenY = isMobile ? -(H * 0.24) : 0;
+
+    // Stage origin is (550, 350)
+    var deltaX = (550 - pt.x) * S + targetScreenX;
+    var deltaY = (350 - pt.y) * S + targetScreenY;
+
+    return { scale: S, x: deltaX, y: deltaY };
+  }
+
+  function setStep(stepIndex){
+    if(stepIndex === currentStep) return;
+    currentStep = stepIndex;
+
+    // Calculate dynamic camera transform
+    var cam = calculateCamera(stepIndex);
+    stage.style.transform = 'translate(' + Math.round(cam.x) + 'px, ' + Math.round(cam.y) + 'px) scale(' + cam.scale + ')';
+
+    // Header & hint classes
+    if(header) header.classList.toggle('zoomed', stepIndex !== 0);
+    if(sticky) sticky.classList.toggle('zoomed', stepIndex !== 0);
+
+    // Update Detail Cards
+    cards.forEach(function(card){
+      var cardNum = parseInt(card.getAttribute('data-card'), 10);
+      card.classList.toggle('active', cardNum === stepIndex);
+    });
+
+    // Update Planet Anchors
+    planetAnchors.forEach(function(anchor){
+      var pNum = parseInt(anchor.getAttribute('data-planet'), 10);
+      anchor.classList.toggle('is-target', pNum === stepIndex);
+    });
+
+    // Update HUD Pills
+    var isMobile = window.innerWidth <= 900;
+    var hud = document.querySelector('.orbit-hud');
+    hudPills.forEach(function(pill){
+      var pStep = parseInt(pill.getAttribute('data-step'), 10);
+      var isActive = (pStep === stepIndex);
+      pill.classList.toggle('active', isActive);
+      if(isActive && isMobile && hud){
+        var hudW = hud.clientWidth;
+        var pillL = pill.offsetLeft;
+        var pillW = pill.clientWidth;
+        hud.scrollTo({ left: pillL - (hudW / 2) + (pillW / 2), behavior: 'smooth' });
+      }
+    });
+  }
+
+  function scrollToStep(stepIndex){
+    var secTop = section.offsetTop;
+    var secH = section.offsetHeight;
+    var winH = window.innerHeight;
+    var maxScroll = secH - winH;
+
+    // Distribute 7 milestones: Step 0 at top, Step 6 near bottom
+    var targetScroll;
+    if(stepIndex === 0){
+      targetScroll = secTop;
+    } else {
+      targetScroll = secTop + ((stepIndex - 0.2) / 6.2) * maxScroll;
+    }
+
+    isAutoScrolling = true;
+    clearTimeout(autoScrollTimer);
+    setStep(stepIndex);
+    window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+    autoScrollTimer = setTimeout(function(){ isAutoScrolling = false; }, 900);
+  }
+
+  /* Scroll Progress Listener */
+  function onScroll(){
+    if(isAutoScrolling) return;
+    var secTop = section.offsetTop;
+    var secH = section.offsetHeight;
+    var winH = window.innerHeight;
+    var scrollY = window.scrollY;
+
+    if(scrollY < secTop - 60){
+      setStep(0);
+      return;
+    }
+    if(scrollY > secTop + secH - winH){
+      setStep(6);
+      return;
+    }
+
+    var progress = (scrollY - secTop) / (secH - winH);
+    progress = Math.max(0, Math.min(1, progress));
+
+    // Map 0..1 to step 0..6
+    var step;
+    if(progress < 0.08){
+      step = 0;
+    } else {
+      step = Math.min(6, Math.floor(((progress - 0.08) / 0.92) * 6) + 1);
+    }
+    setStep(step);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', function(){
+    if(currentStep !== -1){
+      var cam = calculateCamera(currentStep);
+      stage.style.transform = 'translate(' + Math.round(cam.x) + 'px, ' + Math.round(cam.y) + 'px) scale(' + cam.scale + ')';
+    }
+  });
+
+  // Initial step setup
+  onScroll();
+
+  /* Click interactions: click any planet to zoom */
+  planetAnchors.forEach(function(anchor){
+    anchor.addEventListener('click', function(e){
+      e.stopPropagation();
+      var p = parseInt(anchor.getAttribute('data-planet'), 10);
+      scrollToStep(p);
+    });
+    anchor.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        var p = parseInt(anchor.getAttribute('data-planet'), 10);
+        scrollToStep(p);
+      }
+    });
+  });
+
+  /* HUD pills navigation */
+  hudPills.forEach(function(pill){
+    pill.addEventListener('click', function(e){
+      e.stopPropagation();
+      var step = parseInt(pill.getAttribute('data-step'), 10);
+      scrollToStep(step);
+    });
+  });
+
+  /* Card footer previous / next buttons */
+  document.querySelectorAll('.card-nav-btn').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var go = parseInt(btn.getAttribute('data-go'), 10);
+      scrollToStep(go);
+    });
+  });
+
+  /* "Explore my skills →" button in header */
+  if(exploreBtn){
+    exploreBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      scrollToStep(1);
+    });
+  }
+})();
+</script>
+
+<script>
+/* Work: Click-to-Zoom Lightbox */
+(function(){
+  var lb=document.getElementById('lightbox'); if(!lb) return;
+  var img=document.getElementById('lbImg'), cap=document.getElementById('lbCap'), btn=document.getElementById('lbClose'), lastFocus=null;
+  function open(src,alt,c){lastFocus=document.activeElement;img.src=src;img.alt=alt||'';cap.textContent=c||alt||'';lb.hidden=false;requestAnimationFrame(function(){lb.classList.add('open');});btn.focus();document.body.style.overflow='hidden';}
+  function close(){lb.classList.remove('open');document.body.style.overflow='';if(lastFocus&&lastFocus.focus)lastFocus.focus();}
+  document.querySelectorAll('.shot, .board-frame').forEach(function(f){
+    var im=f.querySelector('img'), fc=f.querySelector('figcaption'); f.tabIndex=0; f.setAttribute('role','button'); f.setAttribute('aria-label','View full size: '+im.alt);
+    function go(){open(im.currentSrc||im.src,im.alt,fc?fc.textContent:im.alt);}
+    f.addEventListener('click',go);
+    f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
+  });
+  lb.addEventListener('click',function(e){if(e.target!==img)close();});
+  btn.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close();});
+})();
+</script>
+</body>
+</html>
