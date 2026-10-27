@@ -107,6 +107,9 @@
     <canvas class="skills-stars" id="skillsStarsCanvas" aria-hidden="true"></canvas>
     <div class="skills-nebula-glow" aria-hidden="true"></div>
 
+    <!-- Flex stage: header + orbit + detail deck share one flex container -->
+    <div class="skills-main" id="skillsMain">
+
     <!-- Header Layer (Matches Reference Layout) -->
     <div class="skills-cosmic-header" id="skillsCosmicHeader">
       <div class="skills-intro">
@@ -717,6 +720,8 @@
       <div class="scroll-mouse"><span class="scroll-wheel"></span></div>
       <span>SCROLL TO ORBIT &amp; ZOOM</span>
     </div>
+
+    </div><!-- /.skills-main -->
 
     <!-- Bottom Orbit HUD Controls -->
     <nav class="orbit-hud" id="orbitHud" aria-label="Skills orbit selector">
@@ -1553,7 +1558,10 @@
   }
 
   /* ---------- Planet Positions & Camera Math ---------- */
-  // Coordinate map on 1100x700 stage
+  // Design coordinates on the 1100x700 stage
+  var STAGE_W = 1100, STAGE_H = 700;
+  var main = document.getElementById('skillsMain');
+  var deck = document.getElementById('planetDetailDeck');
   var planetCoords = {
     0: { x: 550, y: 350 }, // Center Mega Planet
     1: { x: 750, y: 175 }, // Technical (Top-Right)
@@ -1568,72 +1576,75 @@
   var isAutoScrolling = false;
   var autoScrollTimer = null;
 
+  // Must match the CSS breakpoint where .skills-main switches from row to column
+  var stackedMQ = window.matchMedia('(max-width: 1024px) and (min-height: 521px), (max-width: 599px)');
+
+  function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
+
+  // Everything is measured from the real flex container, not window size,
+  // so the orbit always fits whatever space the layout gives it.
   function calculateCamera(stepIndex){
-    var W = window.innerWidth;
-    var H = window.innerHeight;
-    var isMobile = W <= 900;
+    var mw = main.clientWidth;
+    var mh = main.clientHeight;
+    var stacked = stackedMQ.matches;
+    var cam;
 
     if(stepIndex === 0){
-      if(isMobile){
-        // Mobile Overview: fit solar system neatly on any phone screen
-        var availW = W - 24;
-        var availH = H - 210;
-        var fitScaleW = availW / 830;
-        var fitScaleH = availH / 520;
-        var fitScale = Math.min(fitScaleW, fitScaleH);
-        var baseScale = Math.max(0.30, Math.min(fitScale, 0.60));
-
-        var topSpace = 150;
-        var bottomSpace = 54;
-        var visualCenterY = topSpace + (H - topSpace - bottomSpace) / 2;
-        var offsetY = visualCenterY - (H / 2);
-
-        return { scale: baseScale, x: 0, y: Math.round(offsetY) };
+      var headerH = (stacked && header) ? header.offsetHeight + 8 : 0;
+      var padX = stacked ? 12 : 40;
+      var bw = stacked ? 860 : 1060;   // visible width of the orbit system
+      var bh = stacked ? 470 : 660;
+      var availW = mw - padX * 2;
+      var availH = mh - headerH - (stacked ? 16 : 24);
+      var fit = Math.min(availW / bw, availH / bh);
+      var scale = clamp(fit, 0.2, 1.05);
+      cam = { scale: scale, x: 0, y: headerH / 2 };
+    } else {
+      var pt = planetCoords[stepIndex] || planetCoords[0];
+      var areaW, areaH, areaCx, areaCy;
+      if(stacked){
+        var deckH = deck ? deck.offsetHeight + 12 : 0;
+        areaW = mw; areaH = Math.max(120, mh - deckH);
+        areaCx = mw / 2; areaCy = areaH / 2;
       } else {
-        // Desktop Overview: full stage view with comfortable bounds
-        var availW = W - 80;
-        var availH = H - 160;
-        var fitScaleW = availW / 1060;
-        var fitScaleH = availH / 660;
-        var fitScale = Math.min(fitScaleW, fitScaleH);
-        var baseScale = Math.min(fitScale, 1.05);
-        return { scale: baseScale, x: 0, y: 10 };
+        var deckW = deck ? deck.offsetWidth + 24 : 0;
+        areaW = Math.max(240, mw - deckW); areaH = mh;
+        areaCx = areaW / 2; areaCy = mh / 2;
       }
+      var S = clamp(Math.min(areaW, areaH) / 230, 0.9, 2.45);
+      cam = {
+        scale: S,
+        x: (areaCx - mw / 2) - (pt.x - 550) * S,
+        y: (areaCy - mh / 2) - (pt.y - 350) * S
+      };
     }
+    return cam;
+  }
 
-    var pt = planetCoords[stepIndex] || planetCoords[0];
-    var S = isMobile ? 1.25 : 2.45;
-
-    // Target positions:
-    // On desktop, position zoomed planet on the left side (~22% of screen)
-    // On mobile, center horizontally and lift into upper viewport
-    var targetScreenX = isMobile ? 0 : -(W * 0.22);
-    var targetScreenY = isMobile ? -(H * 0.24) : 0;
-
-    // Stage origin is (550, 350)
-    var deltaX = (550 - pt.x) * S + targetScreenX;
-    var deltaY = (350 - pt.y) * S + targetScreenY;
-
-    return { scale: S, x: deltaX, y: deltaY };
+  function applyCamera(stepIndex){
+    var cam = calculateCamera(stepIndex);
+    stage.style.transform = 'translate(' + Math.round(cam.x) + 'px, ' + Math.round(cam.y) + 'px) scale(' + cam.scale + ')';
+    // Counter-scale labels while the whole system is shrunk so they stay readable
+    var pc = stepIndex === 0 ? clamp(0.8 / cam.scale, 1, 1.35) : 1;
+    stage.style.setProperty('--pc', pc.toFixed(3));
   }
 
   function setStep(stepIndex){
     if(stepIndex === currentStep) return;
     currentStep = stepIndex;
 
-    // Calculate dynamic camera transform
-    var cam = calculateCamera(stepIndex);
-    stage.style.transform = 'translate(' + Math.round(cam.x) + 'px, ' + Math.round(cam.y) + 'px) scale(' + cam.scale + ')';
-
     // Header & hint classes
     if(header) header.classList.toggle('zoomed', stepIndex !== 0);
     if(sticky) sticky.classList.toggle('zoomed', stepIndex !== 0);
 
-    // Update Detail Cards
+    // Update Detail Cards (before measuring, so the deck has its real size)
     cards.forEach(function(card){
       var cardNum = parseInt(card.getAttribute('data-card'), 10);
       card.classList.toggle('active', cardNum === stepIndex);
     });
+
+    // Camera is calculated from the live flex layout
+    applyCamera(stepIndex);
 
     // Update Planet Anchors
     planetAnchors.forEach(function(anchor){
@@ -1642,7 +1653,7 @@
     });
 
     // Update HUD Pills
-    var isMobile = window.innerWidth <= 900;
+    var isMobile = stackedMQ.matches;
     var hud = document.querySelector('.orbit-hud');
     hudPills.forEach(function(pill){
       var pStep = parseInt(pill.getAttribute('data-step'), 10);
@@ -1709,12 +1720,13 @@
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', function(){
-    if(currentStep !== -1){
-      var cam = calculateCamera(currentStep);
-      stage.style.transform = 'translate(' + Math.round(cam.x) + 'px, ' + Math.round(cam.y) + 'px) scale(' + cam.scale + ')';
-    }
-  });
+  // Re-fit whenever the flex container changes size (resize, rotate, mobile URL bar, etc.)
+  function refit(){ if(currentStep !== -1) applyCamera(currentStep); }
+  if('ResizeObserver' in window){
+    new ResizeObserver(refit).observe(main);
+  }
+  window.addEventListener('resize', refit);
+  window.addEventListener('orientationchange', refit);
 
   // Initial step setup
   onScroll();
