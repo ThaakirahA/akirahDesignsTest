@@ -890,6 +890,7 @@ h2.section-title {
 }
 
 .skills-sticky {
+  --skills-nav: 72px;                 /* space reserved for the fixed site nav */
   position: sticky;
   top: 0;
   left: 0;
@@ -897,12 +898,29 @@ h2.section-title {
   height: 100vh;
   height: 100svh;
   overflow: hidden;
-  display: flex;
+  display: flex;                      /* FLEX: column = [main area] + [HUD] */
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding-top: var(--skills-nav);
   isolation: isolate;
   background: radial-gradient(ellipse 90% 80% at 50% 50%, #060c1c 0%, #02050e 100%);
+  box-sizing: border-box;
+}
+
+/* Main flex area: orbit fills it, detail deck is a real flex item inside it */
+.skills-main {
+  position: relative;
+  flex: 1 1 0;
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+  padding: 0 clamp(16px, 4vw, 56px);
   box-sizing: border-box;
 }
 
@@ -932,20 +950,25 @@ h2.section-title {
 /* Cosmic Header */
 .skills-cosmic-header {
   position: absolute;
-  top: 96px;
+  top: 12px;
   left: 0;
   right: 0;
-  padding: 0 48px;
+  padding: 0 clamp(16px, 4vw, 56px);
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 10px 20px;
   z-index: 25;
   pointer-events: none;
+  box-sizing: border-box;
   transition: opacity 0.4s cubic-bezier(0.22, 0.68, 0.35, 1), transform 0.4s cubic-bezier(0.22, 0.68, 0.35, 1), visibility 0.4s;
 }
 
 .skills-intro {
-  max-width: 440px;
+  flex: 1 1 280px;
+  max-width: min(400px, 30vw);
+  min-width: 0;
   pointer-events: auto;
   transition: opacity 0.4s cubic-bezier(0.22, 0.68, 0.35, 1), transform 0.4s cubic-bezier(0.22, 0.68, 0.35, 1);
 }
@@ -987,10 +1010,10 @@ h2.section-title {
 }
 
 .skills-main-title {
-  font-size: clamp(38px, 4.5vw, 58px);
+  font-size: clamp(28px, 4.5vw, 58px);
   font-weight: 800;
   line-height: 1.05;
-  margin: 0 0 14px;
+  margin: 0 0 clamp(6px, 1.2vw, 14px);
   letter-spacing: -0.02em;
   color: #fff;
 }
@@ -1003,10 +1026,10 @@ h2.section-title {
 }
 
 .skills-desc {
-  font-size: 14.5px;
+  font-size: clamp(13px, 1.1vw, 14.5px);
   line-height: 1.6;
   color: var(--text-dim);
-  margin: 0 0 20px;
+  margin: 0 0 clamp(10px, 1.5vw, 20px);
 }
 
 .orbit-explore-btn {
@@ -1074,15 +1097,20 @@ h2.section-title {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   z-index: 10;
   pointer-events: none;
 }
 
 .orbit-stage {
+  /* Fixed design canvas, centred in the flex container and scaled to fit by JS.
+     flex: none stops the flex parent from squashing it on narrow screens. */
+  flex: none;
   position: relative;
   width: 1100px;
   height: 700px;
-  transform-origin: 550px 350px;
+  --pc: 1;
+  transform-origin: 50% 50%;
   will-change: transform;
   transition: transform 0.75s cubic-bezier(0.22, 0.68, 0.35, 1);
   pointer-events: auto;
@@ -1239,12 +1267,14 @@ h2.section-title {
   color: #f1f5f9;
   white-space: nowrap;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65), 0 0 14px var(--p-dim);
+  transform: scale(var(--pc, 1));
+  transform-origin: top center;
   transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .planet-anchor:hover .planet-pill,
 .planet-anchor.is-target .planet-pill {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(var(--pc, 1));
   background: rgba(10, 20, 44, 0.95);
   border-color: var(--p-color);
   color: #ffffff;
@@ -1255,29 +1285,23 @@ h2.section-title {
    HOLOGRAPHIC SKILL DECK CARDS (Flexbox Scrollytelling View)
 ============================================================ */
 .planet-detail-deck {
-  position: absolute;
-  right: 5%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: min(580px, 45vw);
-  max-height: calc(100vh - 120px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
+  --deck-max: min(560px, calc(100svh - var(--skills-nav) - 120px));
+  position: relative;
+  flex: 0 1 min(580px, 44%);
+  min-width: 0;
+  display: grid;                      /* cards stack in one cell; deck sizes to the tallest */
+  align-items: center;
   z-index: 30;
   pointer-events: none;
 }
 
 .planet-detail-card {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  max-height: min(560px, calc(100vh - 130px));
+  grid-area: 1 / 1;
+  min-width: 0;
+  max-height: var(--deck-max);
   display: flex;
   flex-direction: column;
-  transform: translateY(-50%) translateX(36px) scale(0.95);
+  transform: translateX(36px) scale(0.95);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -1286,7 +1310,7 @@ h2.section-title {
   -webkit-backdrop-filter: blur(28px);
   border: 1px solid var(--card-glow, rgba(111, 179, 236, 0.28));
   border-radius: 24px;
-  padding: 26px 30px 20px;
+  padding: clamp(14px, 2vw, 26px) clamp(16px, 2.2vw, 30px) clamp(12px, 1.6vw, 20px);
   box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8), 0 0 35px var(--card-glow, rgba(47, 111, 214, 0.18)), inset 0 1px 0 rgba(255, 255, 255, 0.12);
   box-sizing: border-box;
   transition: opacity 0.4s cubic-bezier(0.22, 0.68, 0.35, 1),
@@ -1298,7 +1322,7 @@ h2.section-title {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translateY(-50%) translateX(0) scale(1);
+  transform: none;
 }
 
 .card-top-tag {
@@ -1329,7 +1353,7 @@ h2.section-title {
   font-family: 'Instrument Serif', Georgia, serif;
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(28px, 3.2vw, 38px);
+  font-size: clamp(22px, 3.2vw, 38px);
   line-height: 1.05;
   margin: 0;
   color: #fff;
@@ -1389,14 +1413,16 @@ h2.section-title {
 .card-skill-items {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: clamp(5px, 0.6vw, 7px);
 }
 
 .card-footer-controls {
   flex: 0 0 auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  gap: 8px;
   margin-top: 14px;
   padding-top: 12px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -1429,13 +1455,14 @@ h2.section-title {
    ORBIT BOTTOM HUD BAR
 ============================================================ */
 .orbit-hud {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
+  flex: 0 0 auto;
+  align-self: center;
+  max-width: calc(100% - 20px);
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 6px;
+  margin: 0 auto clamp(10px, 2vh, 24px);
   padding: 6px 10px;
   border-radius: var(--radius-full);
   background: rgba(5, 10, 24, 0.82);
@@ -1443,14 +1470,21 @@ h2.section-title {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6), 0 0 24px rgba(30, 58, 138, 0.25);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
   z-index: 35;
 }
+
+.orbit-hud::-webkit-scrollbar { display: none; }
 
 .hud-pill {
   background: none;
   border: 1px solid transparent;
   color: var(--text-dim);
-  padding: 7px 14px;
+  padding: 7px clamp(8px, 1.1vw, 14px);
+  white-space: nowrap;
+  flex: 0 0 auto;
   border-radius: var(--radius-full);
   font-family: inherit;
   font-size: 12.5px;
@@ -1490,7 +1524,7 @@ h2.section-title {
 /* Scroll Hint Indicator */
 .orbit-scroll-hint {
   position: absolute;
-  bottom: 74px;
+  bottom: 6px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -2594,145 +2628,6 @@ footer h2 {
     top: 20px;
     bottom: -16px;
   }
-  .skills-cosmic-header {
-    top: 72px;
-    padding: 0 20px;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .skills-orbit-note {
-    display: none;
-  }
-  .skills-intro {
-    max-width: 100%;
-  }
-  .skills-main-title {
-    font-size: 34px;
-    margin-bottom: 6px;
-  }
-  .skills-desc {
-    font-size: 13px;
-    margin-bottom: 12px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .orbit-explore-btn {
-    padding: 8px 18px;
-    font-size: 12px;
-  }
-  .planet-pill {
-    padding: 5px 12px;
-    font-size: 11.5px;
-  }
-  .skills-sticky.zoomed .planet-pill {
-    margin-top: 6px;
-    padding: 4px 12px;
-    font-size: 11px;
-    background: rgba(8, 16, 36, 0.92);
-  }
-  .skills-sticky.zoomed .planet-badge {
-    margin-bottom: 4px;
-    font-size: 10.5px;
-  }
-  .planet-detail-deck {
-    position: absolute;
-    left: 14px;
-    right: 14px;
-    bottom: 54px;
-    top: auto;
-    transform: none;
-    width: auto;
-    max-width: 500px;
-    margin: 0 auto;
-    max-height: min(390px, 48svh);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: stretch;
-    pointer-events: none;
-    z-index: 30;
-  }
-  .planet-detail-card {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 100%;
-    max-height: min(390px, 48svh);
-    display: none;
-    flex-direction: column;
-    padding: 15px 18px 12px;
-    border-radius: 18px;
-    transform: translateY(14px) scale(0.97);
-    box-sizing: border-box;
-  }
-  .planet-detail-card.active {
-    display: flex;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateY(0) scale(1);
-  }
-  .card-top-tag {
-    font-size: 10px;
-    padding: 3px 10px;
-    margin-bottom: 6px;
-  }
-  .card-title-group {
-    margin-bottom: 8px;
-  }
-  .card-planet-title {
-    font-size: 24px;
-  }
-  .card-planet-sub {
-    font-size: 12px;
-  }
-  .card-skills-body {
-    flex: 1 1 auto;
-    min-height: 0;
-    gap: 8px;
-    max-height: none;
-    padding-right: 4px;
-  }
-  .card-group-label {
-    font-size: 10.5px;
-  }
-  .card-skill-items {
-    gap: 6px;
-  }
-  .sk-item {
-    font-size: 12px;
-    padding: 5px 10px;
-    border-radius: 8px;
-  }
-  .card-footer-controls {
-    margin-top: 8px;
-    padding-top: 8px;
-  }
-  .card-nav-btn {
-    font-size: 11px;
-    padding: 5px 12px;
-  }
-  .orbit-hud {
-    bottom: 12px;
-    padding: 4px 8px;
-    max-width: calc(100vw - 20px);
-    overflow-x: auto;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-  .orbit-hud::-webkit-scrollbar {
-    display: none;
-  }
-  .hud-pill {
-    padding: 5px 10px;
-    font-size: 11.5px;
-    white-space: nowrap;
-  }
-  .orbit-scroll-hint {
-    display: none;
-  }
   .project-head {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -2774,31 +2669,6 @@ footer h2 {
   .about-facts {
     grid-template-columns: 1fr;
   }
-  .planet-detail-deck {
-    left: 8px;
-    right: 8px;
-    bottom: 50px;
-    max-height: min(360px, 47svh);
-  }
-  .planet-detail-card {
-    padding: 12px 14px 10px;
-    max-height: min(360px, 47svh);
-    border-radius: 16px;
-  }
-  .card-planet-title {
-    font-size: 21px;
-  }
-  .card-skills-body {
-    gap: 7px;
-  }
-  .sk-item {
-    font-size: 11px;
-    padding: 4px 8px;
-    border-radius: 7px;
-  }
-  .skills-main-title {
-    font-size: 28px;
-  }
   .project-head {
     padding: 26px 18px 16px;
   }
@@ -2830,11 +2700,85 @@ footer h2 {
     width: 28px;
     height: 28px;
   }
-  .hud-pill {
-    padding: 4px 8px;
-    font-size: 10.5px;
+}
+
+/* ============================================================
+   SKILLS — responsive layout (flexbox, fluid, measured by JS)
+   Stacked layout (orbit on top, deck underneath) at <= 1024px.
+============================================================ */
+@media (max-width: 1024px) and (min-height: 521px), (max-width: 599px) {
+  .skills-main {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 0 14px 8px;
   }
-  .card-planet-title {
-    font-size: 19px;
+  .skills-cosmic-header { flex-direction: column; flex-wrap: nowrap; gap: 8px; }
+  .skills-intro { flex: 0 0 auto; max-width: 100%; }
+  .skills-orbit-note { display: none; }
+  .skills-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 10px;
   }
+  .orbit-explore-btn { padding: 8px 18px; font-size: 12px; }
+
+  .planet-detail-deck {
+    --deck-max: min(400px, 46svh);
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    align-items: end;
+  }
+  .planet-detail-card {
+    display: none;
+    border-radius: 18px;
+    transform: translateY(14px) scale(0.97);
+  }
+  .planet-detail-card.active { display: flex; transform: none; }
+
+  .card-top-tag { font-size: 10px; padding: 3px 10px; margin-bottom: 6px; }
+  .card-title-group { margin-bottom: 8px; }
+  .card-planet-sub { font-size: 12px; }
+  .card-skills-body { gap: 8px; padding-right: 4px; }
+  .card-group-label { font-size: 10.5px; }
+  .sk-item { font-size: 12px; padding: 5px 10px; border-radius: 8px; }
+  .card-footer-controls { margin-top: 8px; padding-top: 8px; }
+  .card-nav-btn { font-size: 11px; padding: 5px 12px; }
+
+  .planet-pill { padding: 5px 12px; font-size: 11.5px; }
+  .skills-sticky.zoomed .planet-pill { margin-top: 6px; padding: 4px 12px; font-size: 11px; background: rgba(8, 16, 36, 0.92); }
+  .skills-sticky.zoomed .planet-badge { margin-bottom: 4px; font-size: 10.5px; }
+  .hud-pill { padding: 5px 10px; font-size: 11.5px; }
+  .orbit-scroll-hint { display: none; }
+}
+
+@media (max-width: 560px) {
+  .skills-main { padding: 0 8px 6px; }
+  .planet-detail-deck { --deck-max: min(360px, 45svh); }
+  .planet-detail-card { padding: 12px 14px 10px; border-radius: 16px; }
+  .sk-item { font-size: 11px; padding: 4px 8px; border-radius: 7px; }
+  .skills-main-title { font-size: 26px; }
+}
+
+@media (max-width: 360px) {
+  .hud-pill { padding: 4px 8px; font-size: 10.5px; }
+  .card-planet-title { font-size: 19px; }
+}
+
+/* Short landscape screens (phones turned sideways): drop the intro copy, keep the orbit */
+@media (max-height: 520px) {
+  .skills-sticky { --skills-nav: 72px; }
+  .planet-detail-deck { --deck-max: calc(100svh - var(--skills-nav) - 76px); flex-basis: 48%; }
+  .card-skills-body { gap: 6px; }
+  .skills-intro { max-width: min(300px, 34vw); }
+  .orbit-scroll-hint { display: none; }
+  .skills-desc, .skills-orbit-note { display: none; }
+  .skills-main-title { font-size: 24px; margin-bottom: 6px; }
+  .skills-tag { display: none; }
+  .orbit-hud { margin-bottom: 6px; }
 }
